@@ -6,6 +6,8 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 import myclasses.controle;
+import myclasses.memory;
+import myclasses.tdsReg;
 
 /**
  *
@@ -567,21 +569,11 @@ public class PagInserirDados extends javax.swing.JFrame {
     }
     
     
-    public void manipulacao(
-        controle estados,
-        int[][]registradores,
-        int PC,
-        int IR,
-        int MDR,
-        int regA,
-        int regB,
-        int regSaidaUla,
-        int [][]memoria
-        )
+    public static void manipulacao(controle estados, tdsReg banco, memory memoria)
     {
         if(estados.getLerMem()==1 && estados.getIREsc()==1 && estados.getIouD()==0)
         {
-            IR=memoria[PC][1];
+            banco.setIR(memoria.conteudo(banco.getPC()));
         }
     }
     
@@ -594,65 +586,25 @@ public class PagInserirDados extends javax.swing.JFrame {
             }
         });
   
-        int cont = 0;
-        //Para a minha memória
-        
-        int [][]memoria = new int[256][2];
-        int linha = 0;
-        int coluna = 0;
-        
-//        //Registradores - na primeira execução eles são zeros
-//        
-//        int PC=0;
-//        int IR=0;
-//        int MDR=0;
-//        int regA=0;
-//        int regB=0;
-//        int regSaidaUla=0;
-               
-        //Banco de registradores
-        
-        //int []bancoRegistradores = new int[32]; //0 a 31 posições
+        int c= 0;
         
         
-        /*O que é cada posição do meu banco de registradores?
-        [0]=$zero
-        [2 a 3]=$vo e $v1
-        [4 a 7]=$a0 a $a3
-        [8 a 15]=$t0 a $t7
-        [16 a 23]=$s0 a $s7
-        [24 a 25]=$t8 a $t9
-        [28]= $gp(ponteiro global)
-        [29]=$sp(stack pointer)
-        [30]=$fp(frame pointer)
-        [31]=$ra(endereço de retorno)
-        */
-        
-        //Inicialmente tanto os registradores quanto o banco de registradores estão ZERADOS
-//        for(int i = 0; i < 32; i++)
-//        {
-//            bancoRegistradores[i] = 0;
-//        }
-        
+        memory memoria = new memory(256, 2);
         controle CentralControle = new controle();
+        tdsReg registradores = new tdsReg(0,0,0,0,0,0);
         
         //Como estou com dificuldade para enxergar alguns passos
         //Implemento tudo estático 
-        if(cont == 0)
+        memoria.setMemoria(157, 0, 1);
+        if(c == 0)
         {
             //primeira execução
             CentralControle.operacao("vazio");
-            manipulacao(
-            CentralControle,
-            bancoRegistradores,
-            PC,
-        int IR,
-        int MDR,
-        int regA,
-        int regB,
-        int regSaidaUla,
-        int [][]memoria
-        )
+            manipulacao(CentralControle, registradores, memoria);
+            System.out.println("Valor dos registradores:");
+            System.out.println("IR:"+registradores.getIR());
+            System.out.println("memoria:"+memoria.conteudo(registradores.getPC()));
+            
         }
         
      

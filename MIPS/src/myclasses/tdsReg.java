@@ -15,6 +15,19 @@ public class tdsReg {
         public int regB;
         public int regSaidaUla;
         public int []bancoRegistradores = new int[32];
+        /*O que é cada posição do meu banco de registradores?
+        [0]=$zero
+        [2 a 3]=$vo e $v1
+        [4 a 7]=$a0 a $a3
+        [8 a 15]=$t0 a $t7
+        [16 a 23]=$s0 a $s7
+        [24 a 25]=$t8 a $t9
+        [28]= $gp(ponteiro global)
+        [29]=$sp(stack pointer)
+        [30]=$fp(frame pointer)
+        [31]=$ra(endereço de retorno)
+        */
+        
 
     public tdsReg(int PC, int IR, int MDR, int regA, int regB, int regSaidaUla) {
         this.PC = PC;
