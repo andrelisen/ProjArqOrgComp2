@@ -21,7 +21,7 @@ public class controle {
     {
         switch(instrucao)
         {
-            case "vazio":
+            case "busca":
                 this.LerMem = 1;
                 this.IREsc = 1;
                 this.IouD = 0;
@@ -31,8 +31,10 @@ public class controle {
                 this.FontePC = 0;
                 this.PCEsc = 1;
             break;
-            case "load":
-                
+            case "decodificacao":
+                this.ULAFonteA = 0;
+                this.ULAFonteB = 3;
+                this.ULAOp = 0;
             break;
             case "add":
                 

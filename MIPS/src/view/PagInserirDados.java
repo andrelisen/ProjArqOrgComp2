@@ -426,8 +426,6 @@ public class PagInserirDados extends javax.swing.JFrame {
         
         //Limpo caixa de entrada de instrução
         txtInstrucao.setText("");
-        
-        
     }//GEN-LAST:event_btnAdicionarInstrucaoActionPerformed
 
     private void btnExcluirInstrucaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirInstrucaoActionPerformed
@@ -561,6 +559,39 @@ public class PagInserirDados extends javax.swing.JFrame {
         return invertida;
     }
     
+    public static void mascaramento(String campo, tdsReg Registradores)
+    {
+        
+        switch(campo)
+        {
+            case "op":
+                
+            break;
+            case "rs":
+            
+            break;
+            case "rt":
+            
+            break;
+            case "rd":
+                
+            break;
+            case "shamt":
+                
+            break;
+            case "funct":
+                
+            break;
+            case "consEnd":
+            
+            break;
+            case "constante":
+                
+            break;    
+        }
+        
+    }
+    
     
     public static void manipulacao(controle estados, tdsReg banco, memory memoria)
     {
@@ -580,6 +611,12 @@ public class PagInserirDados extends javax.swing.JFrame {
         {
             banco.setPC(banco.getRegSaidaUla());
         }
+        if(estados.getULAFonteA() == 0 && estados.getULAFonteB()==3 && estados.getULAOp()==0)
+        {
+            //A<- reg[IR[25:21]]
+            //B<-reg[IR[20:16]]
+            //ULASaida <- PC+(extensão de sinal(IR[15:0]<<2))
+        }
     }
     
     public static void main(String args[]) {
@@ -591,12 +628,8 @@ public class PagInserirDados extends javax.swing.JFrame {
             }
         });
   
-        int c= 0;
+        int clock= 0;
         
-//        String teste;
-//        int val = 86;
-//        teste = conversorDecimalBinario(val);
-     //   System.out.println("Valor concatenado ="+teste);
         
         memory memoria = new memory(256, 2); //ela vai ter que ser do tipo String por que é mais fácil de manipular
         controle CentralControle = new controle();
@@ -605,15 +638,19 @@ public class PagInserirDados extends javax.swing.JFrame {
         //Como estou com dificuldade para enxergar alguns passos
         //Implemento tudo estático 
         memoria.setMemoria(157, 0, 1);
-        if(c == 0)//quando clicar no botão de executar
+        switch(clock)
         {
+            case 0:
             //primeira execução
-            CentralControle.operacao("vazio");
+            CentralControle.operacao("busca");
             manipulacao(CentralControle, registradores, memoria);
-            
+                break;
+            case 1:
+            CentralControle.operacao("decodificacao");
+            manipulacao(CentralControle, registradores, memoria);
+                break;
         }
         
-     
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
