@@ -559,16 +559,36 @@ public class PagInserirDados extends javax.swing.JFrame {
         return invertida;
     }
     
+        public static int conversorBinarioDecimal(String binario){//estava estourando se fosse do tipo int 
+        //INSTRUÇÃO DO TIPO R - OP|RS|RT|RD|SHAMT|FUNCT
+        //INSTRUÇÃO DO TIPO I - OP|RS|RT|CONSTANTE OU ENDEREÇO
+        //INSTRUÇÃO DO TIPO J - OP|CONSTANTE OU ENDEREÇO
+        int decimal = Integer.parseInt(binario, 2);
+        //System.out.println("Resultado é:"+decimal);
+        return decimal;
+    }
+    
     public static void mascaramento(String campo, tdsReg Registradores)
     {
-        
+        int i = 0;
+        String valor = "";
         switch(campo)
         {
             case "op":
-                
+                while(i < 6)
+                {
+                    valor = valor + campo.charAt(i);
+                    i++;
+                }
+                int op = Integer.parseInt(valor);
             break;
             case "rs":
-            
+                i = 5;
+                while(i <11)
+                {
+                    valor = valor + campo.charAt(i);
+                    i++;
+                }
             break;
             case "rt":
             
@@ -602,8 +622,51 @@ public class PagInserirDados extends javax.swing.JFrame {
             //IR <- MEMORIA[PC]
             //PC = PC +4
         }
-    
-            
+        if(estados.getULAFonteA() == 0 && estados.getULAFonteB() == 3 && estados.getULAOp() == 0)
+        {
+            //é as condições para a decodificação da instrução
+            //A <- REG[IR[25:21]]
+            //B <- REG[IR[20:16]]
+            //ULASAIDA <- PC + (extensão de sinal(IR[15:0] << 2))
+        }
+        if(estados.getULAFonteA() == 1 & estados.getULAFonteB() == 2 && estados.getULAOp() == 0){
+            //Execução de instrução: para instruções que fazem referência a memória
+            //ULASaida <- A + extensão de sinal(IR[15:0])
+        }
+        if(estados.getULAFonteA() == 1 && estados.getULAFonteB() == 0 && estados.getULAOp() == 2){
+            //Execução de instrução: tipo R
+            //ULASaida <-A op B
+        }
+        if(estados.getULAFonteA() == 1 && estados.getULAFonteB() == 0 && estados.getULAOp() == 1 && estados.getPCEscCond() == 1 &&
+                estados.getFontePC() == 1)
+        {
+            //Para execução de instrução: desvio condicional
+            //if a == b então pc <-ULASaida
+        }
+        if(estados.getFontePC() == 2 && estados.getPCEsc() == 1)
+        {
+            //Para execução de instrução: desvio incondicional
+            //pc <- pc[31:28],ir[25:0], 2'B00
+        }
+        if(estados.getLerMem() == 1 && estados.getIouD() == 1){
+            //Acesso a memoria: para isntruçoes de ref a memoria LOAD
+            //MDR <- MEMORIA[ULASAIDA]
+        }
+        if(estados.getEscMem()==1 && estados.getIouD() == 1)
+        {
+            //Acesso a memoria: para instruções de ref a memoria STORE
+            //memoria[ULASAIDA] <- B
+        }
+        if(estados.getRegDst()==1 && estados.getEscReg()==1 && estados.getMemParaReg() == 0)
+        {
+            //Acesso a memoria: instruções do tipo R 
+            //REG[IR[15:11]] <- ULASaida
+        }
+        if(estados.getMemParaReg() == 1 && estados.getEscReg() == 1 && estados.getRegDst() == 0)
+        {
+            //Escrita no registrador
+            //Reg[IR[20:16] <- MDR]
+        }
     }
     
     public static void main(String args[]) {

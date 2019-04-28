@@ -90,12 +90,12 @@ public class tdsReg {
         this.regSaidaUla = regSaidaUla;
     }
 
-    public int[] getBancoRegistradores() {
-        return bancoRegistradores;
+    public int getBancoRegistradores(int posicao) {
+        return bancoRegistradores[posicao];
     }
 
-    public void setBancoRegistradores(int[] bancoRegistradores) {
-        this.bancoRegistradores = bancoRegistradores;
+    public void setBancoRegistradores(int posicao, int valor) {
+        this.bancoRegistradores[posicao] = valor;
     }
         
     
