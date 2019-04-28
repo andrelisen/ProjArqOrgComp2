@@ -303,24 +303,21 @@ public class PagInserirDados extends javax.swing.JFrame {
                             .addComponent(btnAlterarInstrucao)
                             .addComponent(jLabel7)
                             .addComponent(btnExcluirInstrucao))
+                        .addGap(109, 109, 109)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(109, 109, 109)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(txtTamCache, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnCache))
-                                    .addComponent(jLabel5)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel6)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtValordoPc, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnExecucaoCompleta, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtTamCache, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnCache))
+                            .addComponent(jLabel5)
                             .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnExecucaoPasso, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jLabel6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtValordoPc, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnExecucaoCompleta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnExecucaoPasso, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE))
                         .addGap(97, 97, 97))))
         );
         layout.setVerticalGroup(
@@ -539,33 +536,29 @@ public class PagInserirDados extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton4ActionPerformed
     
-    public int conversorDecimalBinario(int n){
+    public static String conversorDecimalBinario(int n){//estava estourando se fosse do tipo int 
+        //INSTRUÇÃO DO TIPO R - OP|RS|RT|RD|SHAMT|FUNCT
+        //INSTRUÇÃO DO TIPO I - OP|RS|RT|CONSTANTE OU ENDEREÇO
+        //INSTRUÇÃO DO TIPO J - OP|CONSTANTE OU ENDEREÇO
         
-       //  int n; // Número de entrada
-         int r; // Resultado do deslocamento
-         int i; // Contador
-
-        // Lê o número
-       // printf("Digite o numero: ");
-       // scanf("%d", &n);
-
-        // Utiliza um número de 32 bits como base para a conversão.
-        for(i = 31; i >= 0; i--) {
-    // Executa a operação shift right até a
-    // última posição da direita para cada bit.
-         r = n >> i;
-
-    // Por meio do "e" lógico ele compara se o valor
-    // na posição mais à direita é 1 ou 0
-    // e imprime na tela até reproduzir o número binário.
-         if(r == 1) {
-         // printf("1");
-          }
-         else {
-          // printf("0");
-         }
+        int d = n;
+        String binario = ""; // guarda os dados
+        while (d > 0) {
+                int b = d % 2;
+                binario = binario + b;
+                d = d >> 1; 
         }
-        return 0;
+        System.out.println("tamanho"+binario.length());
+        while(binario.length() < 32)
+        {
+            binario = binario + 0;
+            System.out.println("sim");
+        }
+        System.out.println(binario);
+        //invertendo meu número
+        String invertida = new StringBuilder(binario).reverse().toString();
+        System.out.println(invertida);
+        return invertida;
     }
     
     
@@ -574,6 +567,18 @@ public class PagInserirDados extends javax.swing.JFrame {
         if(estados.getLerMem()==1 && estados.getIREsc()==1 && estados.getIouD()==0)
         {
             banco.setIR(memoria.conteudo(banco.getPC()));
+        }
+        if(estados.getULAFonteA() == 0 && estados.getULAFonteB() == 1 && estados.getULAOp()==0)
+        {
+            banco.setRegA(banco.getPC());
+            banco.setRegB(4);
+            int soma = 0;
+            soma = banco.getRegA() + banco.getRegB();
+            banco.setRegSaidaUla(soma);
+        }
+        if(estados.getPCEsc()==1)
+        {
+            banco.setPC(banco.getRegSaidaUla());
         }
     }
     
@@ -588,22 +593,23 @@ public class PagInserirDados extends javax.swing.JFrame {
   
         int c= 0;
         
+//        String teste;
+//        int val = 86;
+//        teste = conversorDecimalBinario(val);
+     //   System.out.println("Valor concatenado ="+teste);
         
-        memory memoria = new memory(256, 2);
+        memory memoria = new memory(256, 2); //ela vai ter que ser do tipo String por que é mais fácil de manipular
         controle CentralControle = new controle();
         tdsReg registradores = new tdsReg(0,0,0,0,0,0);
         
         //Como estou com dificuldade para enxergar alguns passos
         //Implemento tudo estático 
         memoria.setMemoria(157, 0, 1);
-        if(c == 0)
+        if(c == 0)//quando clicar no botão de executar
         {
             //primeira execução
             CentralControle.operacao("vazio");
             manipulacao(CentralControle, registradores, memoria);
-            System.out.println("Valor dos registradores:");
-            System.out.println("IR:"+registradores.getIR());
-            System.out.println("memoria:"+memoria.conteudo(registradores.getPC()));
             
         }
         
