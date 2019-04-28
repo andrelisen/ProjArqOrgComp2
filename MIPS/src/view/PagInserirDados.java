@@ -595,28 +595,15 @@ public class PagInserirDados extends javax.swing.JFrame {
     
     public static void manipulacao(controle estados, tdsReg banco, memory memoria)
     {
-        if(estados.getLerMem()==1 && estados.getIREsc()==1 && estados.getIouD()==0)
+        if(estados.getLerMem() == 1 && estados.getIREsc() == 1 && estados.getIouD()==0 && estados.getULAFonteA() == 0 &&
+                estados.getULAFonteB() == 1 && estados.getULAOp() == 0 && estados.getFontePC() == 0 && estados.getPCEsc() ==  1 )
         {
-            banco.setIR(memoria.conteudo(banco.getPC()));
+            //é a condição de busca da instrução
+            //IR <- MEMORIA[PC]
+            //PC = PC +4
         }
-        if(estados.getULAFonteA() == 0 && estados.getULAFonteB() == 1 && estados.getULAOp()==0)
-        {
-            banco.setRegA(banco.getPC());
-            banco.setRegB(4);
-            int soma = 0;
-            soma = banco.getRegA() + banco.getRegB();
-            banco.setRegSaidaUla(soma);
-        }
-        if(estados.getPCEsc()==1)
-        {
-            banco.setPC(banco.getRegSaidaUla());
-        }
-        if(estados.getULAFonteA() == 0 && estados.getULAFonteB()==3 && estados.getULAOp()==0)
-        {
-            //A<- reg[IR[25:21]]
-            //B<-reg[IR[20:16]]
-            //ULASaida <- PC+(extensão de sinal(IR[15:0]<<2))
-        }
+    
+            
     }
     
     public static void main(String args[]) {
@@ -631,13 +618,12 @@ public class PagInserirDados extends javax.swing.JFrame {
         int clock= 0;
         
         
-        memory memoria = new memory(256, 2); //ela vai ter que ser do tipo String por que é mais fácil de manipular
+        memory memoria = new memory(); //ela vai ter que ser do tipo String por que é mais fácil de manipular
         controle CentralControle = new controle();
         tdsReg registradores = new tdsReg(0,0,0,0,0,0);
         
         //Como estou com dificuldade para enxergar alguns passos
         //Implemento tudo estático 
-        memoria.setMemoria(157, 0, 1);
         switch(clock)
         {
             case 0:
@@ -649,6 +635,34 @@ public class PagInserirDados extends javax.swing.JFrame {
             CentralControle.operacao("decodificacao");
             manipulacao(CentralControle, registradores, memoria);
                 break;
+            case 2:
+            CentralControle.operacao("ExecMemoria");
+            manipulacao(CentralControle, registradores, memoria);
+            break;    
+            case 3:
+            CentralControle.operacao("ExecinstTipoR");
+            manipulacao(CentralControle, registradores, memoria);
+            break;    
+            case 4:
+            CentralControle.operacao("ExecdesvioCondicional");
+            manipulacao(CentralControle, registradores, memoria);
+            break;    
+            case 5:
+            CentralControle.operacao("ExecdesvioIncondicional");
+            manipulacao(CentralControle, registradores, memoria);
+            break;    
+            case 6:
+            CentralControle.operacao("AcessoInstRefMemLoad");
+            manipulacao(CentralControle, registradores, memoria);
+            break;    
+            case 7:
+            CentralControle.operacao("AcessoInstRefMemStore");
+            manipulacao(CentralControle, registradores, memoria);
+            break;    
+            case 8:
+            CentralControle.operacao("escritaReg");
+            manipulacao(CentralControle, registradores, memoria);
+            break;    
         }
         
     }
