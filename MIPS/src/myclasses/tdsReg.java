@@ -8,13 +8,13 @@ package myclasses;
 public class tdsReg {
      //Registradores - na primeira execução eles são zeros
         
-        public int PC;
-        public int IR;
-        public int MDR;
-        public int regA;
-        public int regB;
-        public int regSaidaUla;
-        public int []bancoRegistradores = new int[32];
+        public String PC = "0";
+        public String IR= "0";
+        public String MDR= "0";
+        public String regA= "0";
+        public String regB= "0";
+        public String regSaidaUla= "0";
+        public String []bancoRegistradores = new String[32];
         /*O que é cada posição do meu banco de registradores?
         [0]=$zero
         [2 a 3]=$vo e $v1
@@ -27,78 +27,77 @@ public class tdsReg {
         [30]=$fp(frame pointer)
         [31]=$ra(endereço de retorno)
         */
-        
 
-    public tdsReg(int PC, int IR, int MDR, int regA, int regB, int regSaidaUla) {
-        this.PC = PC;
-        this.IR = IR;
-        this.MDR = MDR;
-        this.regA = regA;
-        this.regB = regB;
-        for(int i = 0; i < 32; i++)
-        {
-            this.bancoRegistradores[i] = 0;
+    public tdsReg() {
+        String[] aux = new String[32];
+        for(int i = 0; i<32; i++){
+            aux[i]= "0";
         }
+        
+        this.bancoRegistradores=aux;
     }
 
         
-    public int getPC() {
+        
+    public String getPC() {
         return PC;
     }
 
-    public void setPC(int PC) {
+    public void setPC(String PC) {
         this.PC = PC;
     }
 
-    public int getIR() {
+    public String getIR() {
         return IR;
     }
 
-    public void setIR(int IR) {
+    public void setIR(String IR) {
         this.IR = IR;
     }
 
-    public int getMDR() {
+    public String getMDR() {
         return MDR;
     }
 
-    public void setMDR(int MDR) {
+    public void setMDR(String MDR) {
         this.MDR = MDR;
     }
 
-    public int getRegA() {
+    public String getRegA() {
         return regA;
     }
 
-    public void setRegA(int regA) {
+    public void setRegA(String regA) {
         this.regA = regA;
     }
 
-    public int getRegB() {
+    public String getRegB() {
         return regB;
     }
 
-    public void setRegB(int regB) {
+    public void setRegB(String regB) {
         this.regB = regB;
     }
 
-    public int getRegSaidaUla() {
+    public String getRegSaidaUla() {
         return regSaidaUla;
     }
 
-    public void setRegSaidaUla(int regSaidaUla) {
+    public void setRegSaidaUla(String regSaidaUla) {
         this.regSaidaUla = regSaidaUla;
     }
 
-    public int getBancoRegistradores(int posicao) {
+    public String getBancoRegistradores(int posicao) {
         return bancoRegistradores[posicao];
     }
 
-    public void setBancoRegistradores(int posicao, int valor) {
-        this.bancoRegistradores[posicao] = valor;
+    public void setBancoRegistradores(int posicao, String valor) {
+        bancoRegistradores[posicao] = valor;
     }
+
+
         
-    
+  
         
         
 }
