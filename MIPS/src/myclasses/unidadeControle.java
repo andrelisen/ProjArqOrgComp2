@@ -26,9 +26,7 @@ public class unidadeControle {
     public int EscReg=0;
     public int estado = 0;
     public int instrucao = 0;
-    public int CausaInt = 0;
-    public int EscCause = 0;
-    public int EscEPC= 0;
+  
     
     public int getInstrucao() {
         return instrucao;
@@ -116,28 +114,34 @@ public class unidadeControle {
                 estado = 9;
                 break;
             
-            case 10://Término do desvio incondicional jump
-                CausaInt = 0;
-                EscCause = 1;
-                EscEPC= 1;
-                ULAFonteA = 0;
-                ULAFonteB = 1;
-                ULAOp = 1;
-                PCEsc = 1;
-                FontePC = 3;
+            case 10://bne
+                ULAFonteA = 1;
+                ULAFonteB = 0;
+                ULAOp = 2;
+                FontePC = 1;
                 estado = 10;
                 break;
                 
             case 11:
-                CausaInt = 0;
-                EscCause = 1;
-                EscEPC= 1;
-                ULAFonteA = 0;
-                ULAFonteB = 1;
-                ULAOp = 1;
-                PCEsc = 1;
-                FontePC = 3;
+                ULAFonteA = 1;
+                ULAFonteB = 0;
+                ULAOp = 2;
+                FontePC = 1;
                 estado = 11;
+                break;
+            
+            case 12:
+                ULAFonteA = 1;
+                ULAFonteB = 0;
+                ULAOp = 2;
+                FontePC = 1;
+                estado = 12;
+                break;
+                
+            case 13:
+                PCEscCond=1;
+                FontePC = 0;
+                estado = 13;
                 break;
         }
                 

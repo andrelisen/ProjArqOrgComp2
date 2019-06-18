@@ -77,6 +77,10 @@ public class PagInserirDados extends javax.swing.JFrame {
         jRadioButton12 = new javax.swing.JRadioButton();
         btnImprimirMem = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        txtClock = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -206,6 +210,11 @@ public class PagInserirDados extends javax.swing.JFrame {
         });
 
         btnExecucaoCompleta.setText("EXECUÇÃO COMPLETA");
+        btnExecucaoCompleta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExecucaoCompletaActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("Valor do PC");
 
@@ -242,6 +251,10 @@ public class PagInserirDados extends javax.swing.JFrame {
 
         jLabel9.setText("Endereços a partir de 512");
 
+        jLabel10.setText("CLOCK ");
+
+        jLabel12.setText("Sua associatividade?");
+
         jMenuBar1.setBackground(java.awt.Color.white);
         jMenuBar1.setForeground(java.awt.Color.white);
 
@@ -260,6 +273,12 @@ public class PagInserirDados extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtInstrucao, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel8))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(layout.createSequentialGroup()
@@ -280,14 +299,17 @@ public class PagInserirDados extends javax.swing.JFrame {
                                             .addComponent(btnExcluirDados)))
                                     .addGroup(layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnAlterarDados))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtInstrucao, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel8)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btnAlterarDados))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(136, 136, 136)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel6)
+                                            .addComponent(jLabel10))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(txtValordoPc, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                                            .addComponent(txtClock))))))
+                        .addGap(18, 163, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -295,7 +317,8 @@ public class PagInserirDados extends javax.swing.JFrame {
                                     .addComponent(jRadioButton6)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(btnImprimirMem)
-                                        .addComponent(jRadioButton2)))
+                                        .addComponent(jRadioButton2))
+                                    .addComponent(btnCache))
                                 .addGap(29, 29, 29)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -313,24 +336,25 @@ public class PagInserirDados extends javax.swing.JFrame {
                         .addGap(54, 54, 54))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnAdicionarInstrucao)
-                            .addComponent(btnAlterarInstrucao)
-                            .addComponent(jLabel7)
-                            .addComponent(btnExcluirInstrucao))
-                        .addGap(109, 109, 109)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtTamCache, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnCache))
-                            .addComponent(jLabel5)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnAdicionarInstrucao)
+                                    .addComponent(btnAlterarInstrucao)
+                                    .addComponent(jLabel7)
+                                    .addComponent(btnExcluirInstrucao))
+                                .addGap(206, 206, 206)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 133, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel12)
+                                    .addComponent(jLabel5))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtValordoPc, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtTamCache, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(154, 154, 154)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnExecucaoCompleta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnExecucaoPasso, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE))
@@ -341,13 +365,13 @@ public class PagInserirDados extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(btnExecucaoCompleta, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(64, 64, 64)
                         .addComponent(btnAdicionarInstrucao)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnAlterarInstrucao))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(btnExecucaoCompleta, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnAlterarInstrucao)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(12, 12, 12)
@@ -368,23 +392,41 @@ public class PagInserirDados extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtTamCache, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnCache))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(txtValordoPc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(49, 49, 49)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel5)
+                                    .addComponent(txtTamCache, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel12)
+                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addComponent(btnCache)))
+                        .addGap(103, 103, 103)
                         .addComponent(btnExecucaoPasso, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(txtInstrucao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(55, 55, 55)
-                        .addComponent(btnImprimirMem)
-                        .addGap(53, 53, 53)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel6)
+                                .addComponent(txtValordoPc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnImprimirMem))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel10)
+                            .addComponent(txtClock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(6, 6, 6)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jRadioButton10)
                             .addComponent(jRadioButton7))
@@ -404,15 +446,8 @@ public class PagInserirDados extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jRadioButton8)
                             .addComponent(jRadioButton11))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(txtInstrucao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -434,7 +469,7 @@ public class PagInserirDados extends javax.swing.JFrame {
     clock clockExt = new clock();
     unidadeLogAritm ula = new unidadeLogAritm();
     public static int endereco = 0;
-    
+    clock clockTotal = new clock();
     
     private void btnAdicionarInstrucaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarInstrucaoActionPerformed
         
@@ -448,7 +483,7 @@ public class PagInserirDados extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(null, "MEMÓRIA CHEIA!");
         }else{
-            Object[] aux = {somalinhas, txtInstrucao.getText()}; 
+            Object[] aux = {endereco, txtInstrucao.getText()}; 
             dados = aux;
             dtmInstrucao.addRow(dados);
             
@@ -575,165 +610,606 @@ public class PagInserirDados extends javax.swing.JFrame {
 
     private void btnImprimirMemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimirMemActionPerformed
         System.out.println("A memória é");
-     //   memoria.imprimir();
+        memoria.imprimir();
+        System.out.println("---------------------------------------------");
         
     }//GEN-LAST:event_btnImprimirMemActionPerformed
 
     private void btnExecucaoPassoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExecucaoPassoActionPerformed
         
-        //qual estado da máquina de estados eu to com esse clock?
-        int estado = controle.indicaSinais(clockExt.getCounter());//estado 0 tenho q ler determinados sinais
-        int instrucao =0;
-        String conteudo;
-        String operacao;
-        String reg1;
-        String reg2;
-        String estSignal;
-        switch(estado){
-            
-            case 0:
-               // String dadoLido = memoria.getMemoria(Integer.parseInt(bancoRegistrador.getPC()));
-                palavra p = memoria.procurar(Integer.parseInt(bancoRegistrador.getPC()));
-                String dadoLido = p.getConteudo();
-             //   String dadoLido="00001010010100111000100000100000";
-                System.out.println("Li a memoria="+dadoLido);
-           // IMPORTANTE //     int valor =Integer.parseInt(dadoLido, 2) ;
-            //    String a = dadoLido.substring(0,6);//pego o opcode da string
-             //   System.out.println("valor de a="+a);
+        
+                //qual estado da máquina de estados eu to com esse clock?
+                int estado = controle.indicaSinais(clockExt.getCounter());//estado 0 tenho q ler determinados sinais
+                txtClock.setText(Integer.toString(clockTotal.getCounter()));
+                txtValordoPc.setText(bancoRegistrador.getPC());
+
+                int instrucao =0;
+                String conteudo;
+                String operacao;
+                String reg1;
+                String reg2;
+                String estSignal;
+                int resultado=0;
+                String constante;
+                String destino;
+                palavra p;
                 
-                bancoRegistrador.setIR(dadoLido); //liga memoria, reg inst
-                ula.setValorA(Integer.parseInt(bancoRegistrador.getPC()));
-                ula.setValorB(4);
-                ula.setOperacao("add"); 
-                ula.executarOperacao();//liga ula
-                bancoRegistrador.setPC(Integer.toString(ula.getSaida())); //liga pc
-                System.out.println("Meu pc é="+bancoRegistrador.getPC());
-//                System.out.println("Assim ficou após executar uma BUSCA de instrução na memória");
-//                System.out.println("IR="+bancoRegistrador.getIR());
-//                System.out.println("ULA FONTE A="+ula.getValorA());
-//                System.out.println("ULA FONTE B="+ula.getValorB());
-//                System.out.println("ULA SAIDA="+ula.getSaida());
-//                System.out.println("PC ATUALIZADO="+bancoRegistrador.getPC());
-                clockExt.contar();
                 
-                break;
-            
-            case 1:
-                 conteudo = bancoRegistrador.getIR();//retorna o conteudo do reg. instruções
-                 operacao = conteudo.substring(0, 6);
-                System.out.println("Operacao no case 1 é ="+operacao);
-                 instrucao = Integer.parseInt(operacao, 2);
-                 controle.setInstrucao(instrucao);//guardo instrução no controle
-               //  clockExt.setCounter(instrucao);
-                System.out.println("A instrucao e="+controle.getInstrucao());
-                 reg1 = conteudo.substring(6, 11);//String a = dadoLido.substring(0,6);//pego o opcode da string
-                 reg2 = conteudo.substring(11, 16);
-                 int r1 = Integer.parseInt(reg1, 2);
-                 int r2 = Integer.parseInt(reg2, 2);
-             //    System.out.println("Valor do reg1="+r1+"; reg2="+r2);
-                 
-                 bancoRegistrador.setRegA(bancoRegistrador.getBancoRegistradores(r1));
-                 bancoRegistrador.setRegB(bancoRegistrador.getBancoRegistradores(r2));
-                 
-                 estSignal = conteudo.substring(16,32);
-             
-                 estSignal = extensaoSinalComDesloc(estSignal);
-                 ula.setValorA(Integer.parseInt(bancoRegistrador.getPC()));
-                 ula.setValorB(Integer.parseInt(estSignal, 2));
-                 ula.setOperacao("add");
-                 ula.executarOperacao();
-                 bancoRegistrador.setRegSaidaUla(Integer.toString(ula.getSaida()));
-                 
-                     if(instrucao == 0){
-                         clockExt.setCounter(6);
-                     }
-                     if(instrucao == 4){
-                         clockExt.setCounter(8);
-                     }
-                     if(instrucao == 2){
-                         clockExt.setCounter(9);
-                     }
-                     if(instrucao == 35 || instrucao == 43 || instrucao == 12 || instrucao == 13 || instrucao == 4 ||
-                             instrucao == 5){
-                         System.out.println("Contei");
-                         clockExt.contar();
-                     }
-//                int result = conversorDecimalBinario(ula.getSaida());
-//                
-//                System.out.println("Meu registrador A="+bancoRegistrador.getRegA());
-//                System.out.println("Meu registrador B="+bancoRegistrador.getRegB());
-//                System.out.println("A saída da ULA fica como="+result);
+                p = memoria.procurar(Integer.parseInt(bancoRegistrador.getPC()));
                 
-                break;
-            case 2:
-                
-                ula.setValorA(Integer.parseInt(bancoRegistrador.getRegA()));
-                conteudo = bancoRegistrador.getIR();
-                estSignal = conteudo.substring(16,32);
-              //  System.out.println("valor de estSignal="+estSignal);
-                ula.setValorB(Integer.parseInt(estSignal, 2));
-                ula.setOperacao("add");
-                ula.executarOperacao();
-             //   System.out.println("Valor a="+ula.getValorA());
-              //  System.out.println("Valor b="+ula.getValorB());
-              //  System.out.println("Valor saída="+ula.getSaida());
-                bancoRegistrador.setRegSaidaUla(Integer.toString(ula.getSaida()));
-                
-               
-                //controle da operação para cuidar a máquina de estados
-                    if(controle.getInstrucao()==35){
-                        clockExt.setCounter(3);//meu próximo estado
-                    }
-                    
-                    if(controle.getInstrucao()==43){
-                        clockExt.setCounter(5);//meu próximo estado
-                    }
-                
-                break;
-               
-            case 3://estou fazendo um lw
-             //   System.out.println("Valor do reg saida da ula="+Integer.parseInt(bancoRegistrador.getRegSaidaUla()));
-                palavra auxiliar = memoria.procurar(Integer.parseInt(bancoRegistrador.getRegSaidaUla())) ;
-                conteudo = auxiliar.getConteudo();
-                bancoRegistrador.setMDR(conteudo);
-             //   System.out.println("Minha memória de dados é="+bancoRegistrador.getMDR());
-                clockExt.contar();
-                break;
-            case 4:
-                conteudo = bancoRegistrador.getIR();
-                String registradorDestino = conteudo.substring(6, 11);
-                bancoRegistrador.setBancoRegistradores(Integer.parseInt(registradorDestino, 2), bancoRegistrador.getMDR());
-                clockExt.setCounter(0);
-                break;
-            case 5://estou fazendo um sw
-                memoria.inserir(Integer.parseInt(bancoRegistrador.getRegSaidaUla()), bancoRegistrador.getRegB());
-                clockExt.setCounter(0);
-                break;
-            case 6:
-                ula.setValorA(Integer.parseInt(bancoRegistrador.getRegA()));
-                ula.setValorB(Integer.parseInt(bancoRegistrador.getRegB()));
-                String funct = bancoRegistrador.getIR();
-                funct = funct.substring(26, 32);
-                System.out.println("Funct é="+funct);
-                funct = retornaFunct(Integer.parseInt(funct, 2));
-                System.out.println("Valor de funct="+funct);
-                ula.setOperacao(funct);
-                ula.executarOperacao();
-                bancoRegistrador.setRegSaidaUla(Integer.toString(ula.getSaida()));
-                System.out.println("Resultado da operação de "+funct+"="+bancoRegistrador.getRegSaidaUla());
-                clockExt.contar();
-                break;
-            case 7:
-                conteudo = bancoRegistrador.getIR();
-                conteudo = conteudo.substring(16, 21);
-                bancoRegistrador.setBancoRegistradores(Integer.parseInt(conteudo, 2), bancoRegistrador.getRegSaidaUla());
-                clockExt.setCounter(0);
-                break;
-                
-        }
-       
-        System.out.println("Valor do contador="+clockExt.getCounter());
+                if(p.endereco==0 && p.getConteudo()=="0"){
+                    System.out.println("Execução completa");
+                    estado = -1;
+                }
+
+                switch(estado){
+
+                    case 0:
+                       // String dadoLido = memoria.getMemoria(Integer.parseInt(bancoRegistrador.getPC()));
+                    //    p = memoria.procurar(Integer.parseInt(bancoRegistrador.getPC()));
+                        String dadoLido = p.getConteudo();
+                     //   String dadoLido="00001010010100111000100000100000";
+                 //       System.out.println("Li a memoria="+dadoLido);
+                   // IMPORTANTE //     int valor =Integer.parseInt(dadoLido, 2) ;
+                    //    String a = dadoLido.substring(0,6);//pego o opcode da string
+                     //   System.out.println("valor de a="+a);
+
+                        bancoRegistrador.setIR(dadoLido); //liga memoria, reg inst
+                        
+                        ula.setValorA(Integer.parseInt(bancoRegistrador.getPC()));
+                        ula.setValorB(4);
+                        ula.setOperacao("add"); 
+                        ula.executarOperacao();//liga ula
+                        bancoRegistrador.setPC(Integer.toString(ula.getSaida())); //liga pc
+                        System.out.println("Meu pc é="+bancoRegistrador.getPC());
+        //                System.out.println("Assim ficou após executar uma BUSCA de instrução na memória");
+        //                System.out.println("IR="+bancoRegistrador.getIR());
+        //                System.out.println("ULA FONTE A="+ula.getValorA());
+        //                System.out.println("ULA FONTE B="+ula.getValorB());
+        //                System.out.println("ULA SAIDA="+ula.getSaida());
+        //                System.out.println("PC ATUALIZADO="+bancoRegistrador.getPC());
+                        clockExt.contar();
+
+                        break;
+
+                    case 1:
+                         conteudo = bancoRegistrador.getIR();//retorna o conteudo do reg. instruções
+                         operacao = conteudo.substring(0, 6);
+                        System.out.println("Operacao no case 1 é ="+operacao);
+                         instrucao = Integer.parseInt(operacao, 2);
+                         controle.setInstrucao(instrucao);//guardo instrução no controle
+                       //  clockExt.setCounter(instrucao);
+                        System.out.println("A instrucao e="+controle.getInstrucao());
+                         reg1 = conteudo.substring(6, 11);//String a = dadoLido.substring(0,6);//pego o opcode da string
+                         reg2 = conteudo.substring(11, 16);
+                         int r1 = Integer.parseInt(reg1, 2);
+                         int r2 = Integer.parseInt(reg2, 2);
+                     //    System.out.println("Valor do reg1="+r1+"; reg2="+r2);
+
+                         bancoRegistrador.setRegA(bancoRegistrador.getBancoRegistradores(r1));
+                         bancoRegistrador.setRegB(bancoRegistrador.getBancoRegistradores(r2));
+
+                         estSignal = conteudo.substring(16,32);
+
+                         estSignal = extensaoSinalComDesloc(estSignal);
+                         ula.setValorA(Integer.parseInt(bancoRegistrador.getPC()));
+                         ula.setValorB(Integer.parseInt(estSignal, 2));
+                         ula.setOperacao("add");
+                         ula.executarOperacao();
+                         bancoRegistrador.setRegSaidaUla(Integer.toString(ula.getSaida()));
+
+                             if(instrucao == 0){//tipo r
+                                 clockExt.setCounter(6);
+                             }
+                             if(instrucao == 4){//beq
+                                 clockExt.setCounter(8);
+                             }
+                             if(instrucao == 2 || instrucao == 3){//jump
+                                 clockExt.setCounter(9);
+                             }
+                             if(instrucao == 5){//bne
+                                 clockExt.setCounter(10);
+                             }
+                             if(instrucao == 35 || instrucao == 43){ //lw ou sw
+                                 clockExt.contar();
+                             }
+        //                int result = conversorDecimalBinario(ula.getSaida());
+        //                
+        //                System.out.println("Meu registrador A="+bancoRegistrador.getRegA());
+        //                System.out.println("Meu registrador B="+bancoRegistrador.getRegB());
+        //                System.out.println("A saída da ULA fica como="+result);
+
+                        break;
+                    case 2:
+
+                        ula.setValorA(Integer.parseInt(bancoRegistrador.getRegA()));
+                        conteudo = bancoRegistrador.getIR();
+                        estSignal = conteudo.substring(16,32);
+                      //  System.out.println("valor de estSignal="+estSignal);
+                        ula.setValorB(Integer.parseInt(estSignal, 2));
+                        ula.setOperacao("add");
+                        ula.executarOperacao();
+                     //   System.out.println("Valor a="+ula.getValorA());
+                      //  System.out.println("Valor b="+ula.getValorB());
+                      //  System.out.println("Valor saída="+ula.getSaida());
+                        bancoRegistrador.setRegSaidaUla(Integer.toString(ula.getSaida()));
+
+
+                        //controle da operação para cuidar a máquina de estados
+                            if(controle.getInstrucao()==35){
+                                clockExt.setCounter(3);//meu próximo estado
+                            }
+
+                            if(controle.getInstrucao()==43){
+                                clockExt.setCounter(5);//meu próximo estado
+                            }
+
+                        break;
+
+                    case 3://estou fazendo um lw
+                     //   System.out.println("Valor do reg saida da ula="+Integer.parseInt(bancoRegistrador.getRegSaidaUla()));
+                        palavra auxiliar = memoria.procurar(Integer.parseInt(bancoRegistrador.getRegSaidaUla())) ;
+                        conteudo = auxiliar.getConteudo();
+                        bancoRegistrador.setMDR(conteudo);
+                     //   System.out.println("Minha memória de dados é="+bancoRegistrador.getMDR());
+                        clockExt.contar();
+                        break;
+                    case 4:
+                        conteudo = bancoRegistrador.getIR();
+                        String registradorDestino = conteudo.substring(6, 11);
+                        bancoRegistrador.setBancoRegistradores(Integer.parseInt(registradorDestino, 2), bancoRegistrador.getMDR());
+                        clockExt.setCounter(0);
+                        break;
+                    case 5://estou fazendo um sw
+                        memoria.inserir(Integer.parseInt(bancoRegistrador.getRegSaidaUla()), bancoRegistrador.getRegB());
+                        clockExt.setCounter(0);
+                        break;
+                    case 6:
+                        ula.setValorA(Integer.parseInt(bancoRegistrador.getRegA()));
+                        ula.setValorB(Integer.parseInt(bancoRegistrador.getRegB()));
+                        String funct = bancoRegistrador.getIR();
+                        funct = funct.substring(26, 32);
+                        System.out.println("Funct é="+funct);
+                        funct = retornaFunct(Integer.parseInt(funct, 2));
+
+                        if(funct == "jr"){
+                           clockExt.setCounter(13);
+                        }else{
+
+                                System.out.println("Valor de funct="+funct);
+                                ula.setOperacao(funct);
+                                ula.executarOperacao();
+                                bancoRegistrador.setRegSaidaUla(Integer.toString(ula.getSaida()));
+                                System.out.println("Resultado da operação de "+funct+"="+bancoRegistrador.getRegSaidaUla());
+                                clockExt.contar();
+                        }
+                        break;
+                    case 7:
+                        conteudo = bancoRegistrador.getIR();
+                        conteudo = conteudo.substring(16, 21);
+                        bancoRegistrador.setBancoRegistradores(Integer.parseInt(conteudo, 2), bancoRegistrador.getRegSaidaUla());
+                        clockExt.setCounter(0);
+                        break;
+
+                    case 8:
+
+                        constante = bancoRegistrador.getRegSaidaUla();
+
+                        ula.setValorA(Integer.parseInt(bancoRegistrador.getRegA()));
+                        ula.setValorB(Integer.parseInt(bancoRegistrador.getRegB()));
+                        ula.setOperacao("beq");
+                        ula.executarOperacao();
+                         resultado = ula.getSaida();
+
+                            if(resultado == 1){
+                                bancoRegistrador.setPC(constante);
+                            }else{
+                                ula.setValorA(Integer.parseInt(bancoRegistrador.getPC()));
+                                ula.setValorB(4);
+                                ula.setOperacao("add");
+                                ula.executarOperacao();
+                                bancoRegistrador.setRegSaidaUla(Integer.toString(ula.getSaida()));
+                                bancoRegistrador.setPC(bancoRegistrador.getRegSaidaUla());
+                            }
+                        clockExt.setCounter(0);
+                        break;
+
+                    case 9://jump, jal
+
+
+                        conteudo = bancoRegistrador.getIR();
+                        conteudo = conteudo.substring(6, 32);
+                        System.out.println("Este é o meu endereço de desvio do jump="+Integer.parseInt(conteudo, 2));
+
+                        ula.setValorA(Integer.parseInt(conteudo, 2));
+                        ula.setValorB(Integer.parseInt(bancoRegistrador.getPC()));
+                        ula.setOperacao("sub");
+                        ula.executarOperacao();
+
+                        bancoRegistrador.setRegSaidaUla(Integer.toString(ula.getSaida()));
+                        bancoRegistrador.setPC(bancoRegistrador.getRegSaidaUla());
+                        clockExt.setCounter(0);
+
+                        break;
+
+                    case 10: //bne
+                        constante = bancoRegistrador.getRegSaidaUla();
+
+                        ula.setValorA(Integer.parseInt(bancoRegistrador.getRegA()));
+                        ula.setValorB(Integer.parseInt(bancoRegistrador.getRegB()));
+                        ula.setOperacao("beq");
+                        ula.executarOperacao();
+                        resultado = ula.getSaida();
+
+                            if(resultado == 1){
+                                bancoRegistrador.setPC(constante);
+                            }else{
+                                ula.setValorA(Integer.parseInt(bancoRegistrador.getPC()));
+                                ula.setValorB(4);
+                                ula.setOperacao("add");
+                                ula.executarOperacao();
+                                bancoRegistrador.setRegSaidaUla(Integer.toString(ula.getSaida()));
+                                bancoRegistrador.setPC(bancoRegistrador.getRegSaidaUla());
+                            }
+                        clockExt.setCounter(0);
+
+                        break;
+
+                    case 11: //andi
+
+                          conteudo = bancoRegistrador.getIR();
+
+                          constante = conteudo.substring(16,32);
+                          ula.setValorA(Integer.parseInt(constante));
+                          ula.setValorB(Integer.parseInt(bancoRegistrador.getRegB()));
+                          ula.setOperacao("andi");
+                          ula.executarOperacao();
+
+                          bancoRegistrador.setRegSaidaUla(Integer.toString(ula.getSaida()));
+
+                          reg1 = bancoRegistrador.getIR();
+                          destino = reg1.substring(6,11);
+
+                          bancoRegistrador.setBancoRegistradores(Integer.parseInt(destino, 2), bancoRegistrador.getRegSaidaUla());
+                          clockExt.setCounter(0);
+
+                    break;
+
+                     case 12: //ori
+
+                          conteudo = bancoRegistrador.getIR();
+
+                          constante = conteudo.substring(16,32);
+
+
+                          ula.setValorA(Integer.parseInt(constante));
+                          ula.setValorB(Integer.parseInt(bancoRegistrador.getRegB()));
+                          ula.setOperacao("ori");
+                          ula.executarOperacao();
+
+                          bancoRegistrador.setRegSaidaUla(Integer.toString(ula.getSaida()));
+
+                          reg1 = bancoRegistrador.getIR();
+                          destino = reg1.substring(6,11);
+
+                          bancoRegistrador.setBancoRegistradores(Integer.parseInt(destino, 2), bancoRegistrador.getRegSaidaUla());
+                          clockExt.setCounter(0);
+
+                    break;
+
+                     case 13:
+                        bancoRegistrador.setPC(bancoRegistrador.getBancoRegistradores(31));
+                        clockExt.setCounter(0);
+                         break;
+
+                }
+                clockTotal.contar();
+       // System.out.println("Valor do contador="+clockExt.getCounter());
     }//GEN-LAST:event_btnExecucaoPassoActionPerformed
+
+    private void btnExecucaoCompletaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExecucaoCompletaActionPerformed
+
+        int condicao = 1;
+        int cont = 0;
+        
+        while(condicao == 1){
+                //qual estado da máquina de estados eu to com esse clock?
+                int estado = controle.indicaSinais(clockExt.getCounter());//estado 0 tenho q ler determinados sinais
+                txtClock.setText(Integer.toString(clockTotal.getCounter()));
+                txtValordoPc.setText(bancoRegistrador.getPC());
+                
+                
+                int instrucao =0;
+                String conteudo;
+                String operacao;
+                String reg1;
+                String reg2;
+                String estSignal;
+                int resultado=0;
+                String constante;
+                String destino;
+                palavra p;
+                
+              
+                switch(estado){
+
+                    case 0:
+                        
+                        
+                        p = memoria.procurar(Integer.parseInt(bancoRegistrador.getPC()));
+                
+                
+                        if(p.endereco==0 && p.getConteudo()=="0"){
+                            System.out.println("Execução completa");
+                            estado = -1;
+                            condicao = 0;
+                        }else{
+
+                       // String dadoLido = memoria.getMemoria(Integer.parseInt(bancoRegistrador.getPC()));
+                    //    p = memoria.procurar(Integer.parseInt(bancoRegistrador.getPC()));
+                        String dadoLido = p.getConteudo();
+                     //   String dadoLido="00001010010100111000100000100000";
+                 //       System.out.println("Li a memoria="+dadoLido);
+                   // IMPORTANTE //     int valor =Integer.parseInt(dadoLido, 2) ;
+                    //    String a = dadoLido.substring(0,6);//pego o opcode da string
+                     //   System.out.println("valor de a="+a);
+
+                        bancoRegistrador.setIR(dadoLido); //liga memoria, reg inst
+                        ula.setValorA(Integer.parseInt(bancoRegistrador.getPC()));
+                        ula.setValorB(4);
+                        ula.setOperacao("add"); 
+                        ula.executarOperacao();//liga ula
+                        bancoRegistrador.setPC(Integer.toString(ula.getSaida())); //liga pc
+                        System.out.println("Meu pc é="+bancoRegistrador.getPC());
+        //                System.out.println("Assim ficou após executar uma BUSCA de instrução na memória");
+        //                System.out.println("IR="+bancoRegistrador.getIR());
+        //                System.out.println("ULA FONTE A="+ula.getValorA());
+        //                System.out.println("ULA FONTE B="+ula.getValorB());
+        //                System.out.println("ULA SAIDA="+ula.getSaida());
+        //                System.out.println("PC ATUALIZADO="+bancoRegistrador.getPC());
+                        clockExt.contar();
+                        }
+                        break;
+
+                    case 1:
+                         conteudo = bancoRegistrador.getIR();//retorna o conteudo do reg. instruções
+                         operacao = conteudo.substring(0, 6);
+                        System.out.println("Operacao no case 1 é ="+operacao);
+                         instrucao = Integer.parseInt(operacao, 2);
+                         controle.setInstrucao(instrucao);//guardo instrução no controle
+                       //  clockExt.setCounter(instrucao);
+                        System.out.println("A instrucao e="+controle.getInstrucao());
+                         reg1 = conteudo.substring(6, 11);//String a = dadoLido.substring(0,6);//pego o opcode da string
+                         reg2 = conteudo.substring(11, 16);
+                         int r1 = Integer.parseInt(reg1, 2);
+                         int r2 = Integer.parseInt(reg2, 2);
+                     //    System.out.println("Valor do reg1="+r1+"; reg2="+r2);
+
+                         bancoRegistrador.setRegA(bancoRegistrador.getBancoRegistradores(r1));
+                         bancoRegistrador.setRegB(bancoRegistrador.getBancoRegistradores(r2));
+
+                         estSignal = conteudo.substring(16,32);
+
+                         estSignal = extensaoSinalComDesloc(estSignal);
+                         ula.setValorA(Integer.parseInt(bancoRegistrador.getPC()));
+                         ula.setValorB(Integer.parseInt(estSignal, 2));
+                         ula.setOperacao("add");
+                         ula.executarOperacao();
+                         bancoRegistrador.setRegSaidaUla(Integer.toString(ula.getSaida()));
+
+                             if(instrucao == 0){//tipo r
+                                 clockExt.setCounter(6);
+                             }
+                             if(instrucao == 4){//beq
+                                 clockExt.setCounter(8);
+                             }
+                             if(instrucao == 2 || instrucao == 3){//jump
+                                 clockExt.setCounter(9);
+                             }
+                             if(instrucao == 5){//bne
+                                 clockExt.setCounter(10);
+                             }
+                             if(instrucao == 35 || instrucao == 43){ //lw ou sw
+                                 clockExt.contar();
+                             }
+        //                int result = conversorDecimalBinario(ula.getSaida());
+        //                
+        //                System.out.println("Meu registrador A="+bancoRegistrador.getRegA());
+        //                System.out.println("Meu registrador B="+bancoRegistrador.getRegB());
+        //                System.out.println("A saída da ULA fica como="+result);
+
+                        break;
+                    case 2:
+                        System.out.println("Valor do registrador a="+Integer.parseInt(bancoRegistrador.getRegA()));
+                        ula.setValorA(Integer.parseInt(bancoRegistrador.getRegA()));
+                        conteudo = bancoRegistrador.getIR();
+                        constante = conteudo.substring(16,32);
+                      //  System.out.println("valor de estSignal="+estSignal);
+                        ula.setValorB(Integer.parseInt(constante, 2));
+                        ula.setOperacao("add");
+                        ula.executarOperacao();
+                     //   System.out.println("Valor a="+ula.getValorA());
+                      //  System.out.println("Valor b="+ula.getValorB());
+                      //  System.out.println("Valor saída="+ula.getSaida());
+                        bancoRegistrador.setRegSaidaUla(Integer.toString(ula.getSaida()));
+
+
+                        //controle da operação para cuidar a máquina de estados
+                            if(controle.getInstrucao()==35){
+                                clockExt.setCounter(3);//meu próximo estado
+                            }
+
+                            if(controle.getInstrucao()==43){
+                                clockExt.setCounter(5);//meu próximo estado
+                            }
+
+                        break;
+
+                    case 3://estou fazendo um lw
+                     //   System.out.println("Valor do reg saida da ula="+Integer.parseInt(bancoRegistrador.getRegSaidaUla()));
+                        palavra auxiliar = memoria.procurar(Integer.parseInt(bancoRegistrador.getRegSaidaUla())) ;
+                        conteudo = auxiliar.getConteudo();
+                        bancoRegistrador.setMDR(conteudo);
+                     //   System.out.println("Minha memória de dados é="+bancoRegistrador.getMDR());
+                        clockExt.contar();
+                        break;
+                    case 4:
+                        conteudo = bancoRegistrador.getIR();
+                        String registradorDestino = conteudo.substring(6, 11);
+                        bancoRegistrador.setBancoRegistradores(Integer.parseInt(registradorDestino, 2), bancoRegistrador.getMDR());
+                        clockExt.setCounter(0);
+                        break;
+                    case 5://estou fazendo um sw
+                        System.out.println("Vamos ver o registrador B="+Integer.parseInt(bancoRegistrador.getRegB()));
+                        memoria.inserir(Integer.parseInt(bancoRegistrador.getRegSaidaUla()), bancoRegistrador.getRegB());
+                        clockExt.setCounter(0);
+                        break;
+                    case 6:
+                        ula.setValorA(Integer.parseInt(bancoRegistrador.getRegA()));
+                     //   System.out.println("Valor de regA="+Integer.parseInt(bancoRegistrador.getRegA()));
+                        ula.setValorB(Integer.parseInt(bancoRegistrador.getRegB()));
+                      //  System.out.println("Valor de regB="+Integer.parseInt(bancoRegistrador.getRegB()));
+                        String funct = bancoRegistrador.getIR();
+                        funct = funct.substring(26, 32);
+                     //   System.out.println("Funct é="+funct);
+                        funct = retornaFunct(Integer.parseInt(funct, 2));
+
+                        if(funct == "jr"){
+                           clockExt.setCounter(13);
+                        }else{
+
+                              //  System.out.println("Valor de funct="+funct);
+                                ula.setOperacao(funct);
+                                ula.executarOperacao();
+                              //  System.out.println("Resultadooooo="+ula.getSaida());
+                                bancoRegistrador.setRegSaidaUla(Integer.toString(ula.getSaida()));
+                            //    System.out.println("Resultado da operação de "+funct+"="+bancoRegistrador.getRegSaidaUla());
+                                clockExt.contar();
+                        }
+                        break;
+                    case 7:
+                        conteudo = bancoRegistrador.getIR();
+                        conteudo = conteudo.substring(16, 21);
+                        bancoRegistrador.setBancoRegistradores(Integer.parseInt(conteudo, 2), bancoRegistrador.getRegSaidaUla());
+                        clockExt.setCounter(0);
+                        System.out.println("O pc está valendo isso aqui="+Integer.parseInt(bancoRegistrador.getPC()));
+                        break;
+
+                    case 8:
+
+                        constante = bancoRegistrador.getRegSaidaUla();
+
+                        ula.setValorA(Integer.parseInt(bancoRegistrador.getRegA()));
+                        ula.setValorB(Integer.parseInt(bancoRegistrador.getRegB()));
+                        ula.setOperacao("beq");
+                        ula.executarOperacao();
+                         resultado = ula.getSaida();
+
+                            if(resultado == 1){
+                                bancoRegistrador.setPC(constante);
+                            }else{
+                                ula.setValorA(Integer.parseInt(bancoRegistrador.getPC()));
+                                ula.setValorB(4);
+                                ula.setOperacao("add");
+                                ula.executarOperacao();
+                                bancoRegistrador.setRegSaidaUla(Integer.toString(ula.getSaida()));
+                                bancoRegistrador.setPC(bancoRegistrador.getRegSaidaUla());
+                            }
+                        clockExt.setCounter(0);
+                        break;
+
+                    case 9://jump, jal
+
+
+                        conteudo = bancoRegistrador.getIR();
+                        conteudo = conteudo.substring(6, 32);
+                        System.out.println("Este é o meu endereço de desvio do jump="+Integer.parseInt(conteudo, 2));
+
+                        ula.setValorA(Integer.parseInt(conteudo, 2));
+                        ula.setValorB(Integer.parseInt(bancoRegistrador.getPC()));
+                        ula.setOperacao("sub");
+                        ula.executarOperacao();
+
+                        bancoRegistrador.setRegSaidaUla(Integer.toString(ula.getSaida()));
+                        bancoRegistrador.setPC(bancoRegistrador.getRegSaidaUla());
+                        clockExt.setCounter(0);
+
+                        break;
+
+                    case 10: //bne
+                        constante = bancoRegistrador.getRegSaidaUla();
+
+                        ula.setValorA(Integer.parseInt(bancoRegistrador.getRegA()));
+                        ula.setValorB(Integer.parseInt(bancoRegistrador.getRegB()));
+                        ula.setOperacao("beq");
+                        ula.executarOperacao();
+                        resultado = ula.getSaida();
+
+                            if(resultado == 1){
+                                bancoRegistrador.setPC(constante);
+                            }else{
+                                ula.setValorA(Integer.parseInt(bancoRegistrador.getPC()));
+                                ula.setValorB(4);
+                                ula.setOperacao("add");
+                                ula.executarOperacao();
+                                bancoRegistrador.setRegSaidaUla(Integer.toString(ula.getSaida()));
+                                bancoRegistrador.setPC(bancoRegistrador.getRegSaidaUla());
+                            }
+                        clockExt.setCounter(0);
+
+                        break;
+
+                    case 11: //andi
+
+                          conteudo = bancoRegistrador.getIR();
+
+                          constante = conteudo.substring(16,32);
+                          ula.setValorA(Integer.parseInt(constante));
+                          ula.setValorB(Integer.parseInt(bancoRegistrador.getRegB()));
+                          ula.setOperacao("andi");
+                          ula.executarOperacao();
+
+                          bancoRegistrador.setRegSaidaUla(Integer.toString(ula.getSaida()));
+
+                          reg1 = bancoRegistrador.getIR();
+                          destino = reg1.substring(6,11);
+
+                          bancoRegistrador.setBancoRegistradores(Integer.parseInt(destino, 2), bancoRegistrador.getRegSaidaUla());
+                          clockExt.setCounter(0);
+
+                    break;
+
+                     case 12: //ori
+
+                          conteudo = bancoRegistrador.getIR();
+
+                          constante = conteudo.substring(16,32);
+
+
+                          ula.setValorA(Integer.parseInt(constante));
+                          ula.setValorB(Integer.parseInt(bancoRegistrador.getRegB()));
+                          ula.setOperacao("ori");
+                          ula.executarOperacao();
+
+                          bancoRegistrador.setRegSaidaUla(Integer.toString(ula.getSaida()));
+
+                          reg1 = bancoRegistrador.getIR();
+                          destino = reg1.substring(6,11);
+
+                          bancoRegistrador.setBancoRegistradores(Integer.parseInt(destino, 2), bancoRegistrador.getRegSaidaUla());
+                          clockExt.setCounter(0);
+
+                    break;
+
+                     case 13:
+                        bancoRegistrador.setPC(bancoRegistrador.getBancoRegistradores(31));
+                        clockExt.setCounter(0);
+                         break;
+
+                }
+                clockTotal.contar();
+        }
+    }//GEN-LAST:event_btnExecucaoCompletaActionPerformed
     
    public static String extensaoSinalComDesloc(String numero){
         
@@ -781,7 +1257,7 @@ public class PagInserirDados extends javax.swing.JFrame {
        return valor;
    }
     
-    public static int conversorDecimalBinario(int n){//estava estourando se fosse do tipo int 
+   public static int conversorDecimalBinario(int n){//estava estourando se fosse do tipo int 
         //INSTRUÇÃO DO TIPO R - OP|RS|RT|RD|SHAMT|FUNCT
         //INSTRUÇÃO DO TIPO I - OP|RS|RT|CONSTANTE OU ENDEREÇO
         //INSTRUÇÃO DO TIPO J - OP|CONSTANTE OU ENDEREÇO
@@ -804,7 +1280,7 @@ public class PagInserirDados extends javax.swing.JFrame {
         return Integer.parseInt(invertida);
     }
     
-        public static int conversorBinarioDecimal(String binario){//estava estourando se fosse do tipo int 
+   public static int conversorBinarioDecimal(String binario){//estava estourando se fosse do tipo int 
         //INSTRUÇÃO DO TIPO R - OP|RS|RT|RD|SHAMT|FUNCT
         //INSTRUÇÃO DO TIPO I - OP|RS|RT|CONSTANTE OU ENDEREÇO
         //INSTRUÇÃO DO TIPO J - OP|CONSTANTE OU ENDEREÇO
@@ -813,49 +1289,6 @@ public class PagInserirDados extends javax.swing.JFrame {
         return decimal;
     }
     
-    public static void mascaramento(String campo, tdsReg Registradores)
-    {
-        int i = 0;
-        String valor = "";
-        switch(campo)
-        {
-            case "op":
-                while(i < 6)
-                {
-                    valor = valor + campo.charAt(i);
-                    i++;
-                }
-                int op = Integer.parseInt(valor);
-            break;
-            case "rs":
-                i = 5;
-                while(i <11)
-                {
-                    valor = valor + campo.charAt(i);
-                    i++;
-                }
-            break;
-            case "rt":
-            
-            break;
-            case "rd":
-                
-            break;
-            case "shamt":
-                
-            break;
-            case "funct":
-                
-            break;
-            case "consEnd":
-            
-            break;
-            case "constante":
-                
-            break;    
-        }
-        
-    }
     
     public String lerInstrucao(String instrucao)
     {
@@ -1674,6 +2107,10 @@ public class PagInserirDados extends javax.swing.JFrame {
         */
         int registrador=0;
          switch(valor){
+             case "zero":
+                 registrador = 0;
+                 break;
+                 
              case "v0":
              registrador = 2;
              break;
@@ -1794,64 +2231,6 @@ public class PagInserirDados extends javax.swing.JFrame {
  
     
     
-//    public static void manipulacao(controle estados, tdsReg banco, memory memoria)
-//    {
-//        if(estados.getLerMem() == 1 && estados.getIREsc() == 1 && estados.getIouD()==0 && estados.getULAFonteA() == 0 &&
-//                estados.getULAFonteB() == 1 && estados.getULAOp() == 0 && estados.getFontePC() == 0 && estados.getPCEsc() ==  1 )
-//        {
-//            //é a condição de busca da instrução
-//            //IR <- MEMORIA[PC]
-//            //PC = PC +4
-//        }
-//        if(estados.getULAFonteA() == 0 && estados.getULAFonteB() == 3 && estados.getULAOp() == 0)
-//        {
-//            //é as condições para a decodificação da instrução
-//            //A <- REG[IR[25:21]]
-//            //B <- REG[IR[20:16]]
-//            //ULASAIDA <- PC + (extensão de sinal(IR[15:0] << 2))
-//        }
-//        if(estados.getULAFonteA() == 1 & estados.getULAFonteB() == 2 && estados.getULAOp() == 0){
-//            //Execução de instrução: para instruções que fazem referência a memória
-//            //ULASaida <- A + extensão de sinal(IR[15:0])
-//        }
-//        if(estados.getULAFonteA() == 1 && estados.getULAFonteB() == 0 && estados.getULAOp() == 2){
-//            //Execução de instrução: tipo R
-//            //ULASaida <-A op B
-//        }
-//        if(estados.getULAFonteA() == 1 && estados.getULAFonteB() == 0 && estados.getULAOp() == 1 && estados.getPCEscCond() == 1 &&
-//                estados.getFontePC() == 1)
-//        {
-//            //Para execução de instrução: desvio condicional
-//            //if a == b então pc <-ULASaida
-//        }
-//        if(estados.getFontePC() == 2 && estados.getPCEsc() == 1)
-//        {
-//            //Para execução de instrução: desvio incondicional
-//            //pc <- pc[31:28],ir[25:0], 2'B00
-//        }
-//        if(estados.getLerMem() == 1 && estados.getIouD() == 1){
-//            //Acesso a memoria: para isntruçoes de ref a memoria LOAD
-//            //MDR <- MEMORIA[ULASAIDA]
-//        }
-//        if(estados.getEscMem()==1 && estados.getIouD() == 1)
-//        {
-//            //Acesso a memoria: para instruções de ref a memoria STORE
-//            //memoria[ULASAIDA] <- B
-//        }
-//        if(estados.getRegDst()==1 && estados.getEscReg()==1 && estados.getMemParaReg() == 0)
-//        {
-//            //Acesso a memoria: instruções do tipo R 
-//            //REG[IR[15:11]] <- ULASaida
-//        }
-//        if(estados.getMemParaReg() == 1 && estados.getEscReg() == 1 && estados.getRegDst() == 0)
-//        {
-//            //Escrita no registrador
-//            //Reg[IR[20:16] <- MDR]
-//        }
-//    }
-    
-
-    
     public static void main(String args[]) {
       
         //Criando a parte visual 
@@ -1881,6 +2260,8 @@ public class PagInserirDados extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1908,7 +2289,9 @@ public class PagInserirDados extends javax.swing.JFrame {
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTableDados;
     private javax.swing.JTable jTableInstrucoes;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField txtClock;
     private javax.swing.JTextField txtDado;
     private javax.swing.JTextField txtEndereco;
     private javax.swing.JTextField txtInstrucao;

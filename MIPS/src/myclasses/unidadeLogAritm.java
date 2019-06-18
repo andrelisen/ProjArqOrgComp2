@@ -31,6 +31,17 @@ public class unidadeLogAritm {
         this.saida = saida;
     }
 
+    public int potencia(int y){
+       int pot = 2; // Inicia pot
+       int x = 2; // Inicia pot
+        for (int i = 1; i < y; i++ ) // Comeca em 1 pois 'pot' ja foi inicializado
+        {
+             pot *= x; 
+        }
+     return pot;   
+    }
+    
+    
     public void executarOperacao() //vão vir valores inteiros e operação com nome
     {
         int resultado = 0;
@@ -38,30 +49,39 @@ public class unidadeLogAritm {
             case "add":
             resultado = valorA + valorB;
             setSaida(resultado);    
+                
             break;
             
             case "sll":
+                valorB = potencia(valorB);
                 resultado = valorA * valorB;
+            setSaida(resultado);
                 break;
             
             case "sub":
                 resultado = valorA - valorB;
+            setSaida(resultado);
                 break;
                 
             case "and":
                 resultado = valorA & valorB;
+                System.out.println("Dentro da ULA ="+resultado);
+            setSaida(resultado);
                 break;
                 
             case "or":
                 resultado = valorA | valorB;
+            setSaida(resultado);
                 break;
                 
             case "nor":
                 resultado = ~(valorA | valorB);
+            setSaida(resultado);
                 break;
                 
             case "srl":
                 resultado = valorA / valorB;
+            setSaida(resultado);
                 break;
                 
             case "slt":
@@ -70,34 +90,63 @@ public class unidadeLogAritm {
                 }else{
                     resultado = 0;
                 }
+            setSaida(resultado);
                 break;
                 
             case "jr":
                 resultado = valorA; //ir para a posição de memória 
+            setSaida(resultado);
                 break;
                 
             case "addi":
                 resultado = valorA + valorB;
+            setSaida(resultado);
                 break;
                 
             case "ori":
                 resultado = valorA | valorB;
+            setSaida(resultado);
+                break;
                 
             case "andi":
-                resultado = valorA | valorB;
+                resultado = valorA & valorB;
+            setSaida(resultado);
                 break;
             
+            case "jump":
+                resultado = valorA;
+            setSaida(resultado);
+                break;
                 
-//            case "sub":
-//            resultado = a - b;
-//            setSaida(resultado);
-//            break;
-//            
-//            case "addi":
-//             resultado = a + b;
-//             setSaida(resultado);
-//            break;
-            
+            case "jump register":
+                    resultado = Integer.parseInt("ra");
+            setSaida(resultado);
+                break;
+                
+            case "jump and link":
+                resultado = valorA;
+            setSaida(resultado);
+                break;
+                
+            case "beq":
+                if(valorA == valorB)//se x == y
+                {//desvia para constante 
+                    resultado = 1;
+                }else{
+                    resultado = 0;
+                }
+            setSaida(resultado);
+                break;
+                
+            case "bne":
+                if(valorA != valorB)//se x != y
+                {//desvia para constante 
+                    resultado = 1;
+                }else{
+                    resultado = 0;
+                }
+            setSaida(resultado);
+                break;
         }
     }
 
