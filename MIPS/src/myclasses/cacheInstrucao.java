@@ -44,11 +44,11 @@ public class cacheInstrucao {
         this.tamanhoCache = tamanho;
         this.numVias=via;
         this.offsetByte =(int)  (Math.log(8)/Math.log(2));//  int val = (int) (Math.log(64)/Math.log(2));
-        System.out.println("Offset de byte="+getOffsetByte());
+      //  System.out.println("Offset de byte="+getOffsetByte());
         this.offsetPalavra =(int)  (Math.log(4)/Math.log(2));//  int val = (int) (Math.log(64)/Math.log(2));
-        System.out.println("Offset de palavra="+getOffsetPalavra());
+      //  System.out.println("Offset de palavra="+getOffsetPalavra());
         this.tamIndice = (int) (Math.log(tamanho)/Math.log(2));
-        System.out.println("Índice="+getTamIndice());
+     //   System.out.println("Índice="+getTamIndice());
         this.instrucao = aux;
     }
 
@@ -83,7 +83,7 @@ public class cacheInstrucao {
         
         int num = getOffsetByte()+getOffsetPalavra()+getTamIndice();
         int tamTag = 32 - num;
-        System.out.println("Valor da tag="+tamTag);
+    //    System.out.println("Valor da tag="+tamTag);
         int auxEnd=0;
         auxEnd = endereco;
         int condicao = 0;
@@ -94,9 +94,9 @@ public class cacheInstrucao {
         
         
         int conjunto = restoDivisao(endereco, getTamanhoCache());//vai retornar o conj aonde tenho que salvar o bloco
-        System.out.println("Valor do conj="+conjunto);
+     //   System.out.println("Valor do conj="+conjunto);
         int via = encontrarVia(endereco);
-        System.out.println("A via foi="+via);
+     //   System.out.println("A via foi="+via);
         bloco aux = this.instrucao[conjunto][via];
         
             aux.setP1(mem.procurar(auxEnd));
@@ -115,7 +115,7 @@ public class cacheInstrucao {
     
     public void especialImpressao(){
        int conjunto = 0;
-        System.out.println("via=0");
+     //   System.out.println("via=0");
         bloco b1 = instrucao[0][0];
         palavra p1;
         palavra p2;
@@ -227,7 +227,7 @@ public class cacheInstrucao {
         int verdade = 0;
         
         int conjunto = restoDivisao(endereco, getTamanhoCache());//vai retornar o conj aonde tenho que salvar o bloco
-        System.out.println("Valor do conj="+conjunto);
+      //  System.out.println("Valor do conj="+conjunto);
             
         palavra erro = new palavra(0, "0");
         
@@ -345,7 +345,7 @@ public class cacheInstrucao {
             }
             
             if(entrei == 0 && semTag ==0){
-                System.out.println("uhu");
+          //      System.out.println("uhu");
                 inserir(endereco, memoria);
                escrever(endereco, conteudo, memoria); 
                resposta = 1;

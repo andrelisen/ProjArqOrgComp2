@@ -33,22 +33,25 @@ public class cacheDados {
         
         bloco[][] aux = new bloco[tamanho][via];
         
+        
         for(int i = 0; i<tamanho; i++){
             for(int j = 0; j<via; j++){
+               
                 aux[i][j] = new bloco();
-               aux[i][j].id=j;
+                aux[i][j].id=j;
                 aux[i][j].validade=0;
+                aux[i][j].via=0;
             }
         }
         
         this.tamanhoCache = tamanho;
         this.numVias=via;
         this.offsetByte =(int)  (Math.log(8)/Math.log(2));//  int val = (int) (Math.log(64)/Math.log(2));
-        System.out.println("Offset de byte="+getOffsetByte());
+  //      System.out.println("Offset de byte="+getOffsetByte());
         this.offsetPalavra =(int)  (Math.log(4)/Math.log(2));//  int val = (int) (Math.log(64)/Math.log(2));
-        System.out.println("Offset de palavra="+getOffsetPalavra());
+   //     System.out.println("Offset de palavra="+getOffsetPalavra());
         this.tamIndice = (int) (Math.log(tamanho)/Math.log(2));
-        System.out.println("Índice="+getTamIndice());
+   //     System.out.println("Índice="+getTamIndice());
         this.instrucao = aux;
     }
 
@@ -83,9 +86,9 @@ public class cacheDados {
         
         int num = getOffsetByte()+getOffsetPalavra()+getTamIndice();
         int tamTag = 32 - num;
-        System.out.println("Valor da tag="+tamTag);
+    //    System.out.println("Valor da tag="+tamTag);
         int auxEnd=0;
-        auxEnd = endereco + 508;
+        auxEnd = endereco;
         int condicao = 0;
         
         String tag = verificaTam(conversorDecimalBinario(endereco));
@@ -94,26 +97,26 @@ public class cacheDados {
         
         
         int conjunto = restoDivisao(endereco, getTamanhoCache());//vai retornar o conj aonde tenho que salvar o bloco
-        System.out.println("Valor do conj="+conjunto);
+    //    System.out.println("Valor do conj do endereço:"+endereco+" é="+conjunto);
         int via = encontrarVia(endereco);
-        System.out.println("A via foi="+via);
+     //   System.out.println("A via foi="+via);
         bloco aux = this.instrucao[conjunto][via];
         
             aux.setP1(mem.procurar(auxEnd));
             palavra p1 = mem.procurar(auxEnd);
-            System.out.println("Memoria="+p1.getEndereco()+";"+p1.getConteudo());
+      //      System.out.println("Memoria="+p1.getEndereco()+";"+p1.getConteudo());
             auxEnd = auxEnd + 4;
             aux.setP2(mem.procurar(auxEnd));
             palavra p2 = mem.procurar(auxEnd);
-            System.out.println("Memoria="+p2.getEndereco()+";"+p2.getConteudo());
+     //       System.out.println("Memoria="+p2.getEndereco()+";"+p2.getConteudo());
             auxEnd = auxEnd + 4;
             aux.setP3(mem.procurar(auxEnd));
             palavra p3 = mem.procurar(auxEnd);
-            System.out.println("Memoria="+p3.getEndereco()+";"+p3.getConteudo());
+     //       System.out.println("Memoria="+p3.getEndereco()+";"+p3.getConteudo());
             auxEnd = auxEnd + 4;
             aux.setP4(mem.procurar(auxEnd));
             palavra p4 = mem.procurar(auxEnd);
-            System.out.println("Memoria="+p4.getEndereco()+";"+p4.getConteudo());
+    //        System.out.println("Memoria="+p4.getEndereco()+";"+p4.getConteudo());
             aux.validade=1;
             aux.tag=Integer.parseInt(tag, 2);
             aux.via=1;
@@ -197,8 +200,8 @@ public class cacheDados {
         int val = 0;
             for(int i = 0; i<getNumVias(); i++){
                 if(instrucao[conjunto][i].getVia()==0){//via livre
-                    cheio = 0;
-                    val = i;
+                    //cheio = 0;
+                    //val = i;
                     return i;
                 }else{
                     cheio = 1;
@@ -235,7 +238,7 @@ public class cacheDados {
         int verdade = 0;
         
         int conjunto = restoDivisao(endereco, getTamanhoCache());//vai retornar o conj aonde tenho que salvar o bloco
-        System.out.println("Valor do conj="+conjunto);
+    //    System.out.println("Valor do conj="+conjunto);
             
         palavra erro = new palavra(0, "0");
         
@@ -250,19 +253,23 @@ public class cacheDados {
                             palavra p4 = auxiliar.getP4();
 
                             if(p1.getEndereco()==endereco){
-                                verdade = 1;
+                               // verdade = 1;
+                                System.out.println("Oi");
                                 return p1;
                             }
                             if(p2.getEndereco()==endereco){
-                                verdade = 1;
+                           //     verdade = 1;
+                                System.out.println("Oi2");
                                 return p2;
                             }
                             if(p3.getEndereco()==endereco){
-                                verdade = 1;
+                            //    verdade = 1;
+                                System.out.println("Oi3");
                                 return p3;
                             }
                             if(p4.getEndereco()==endereco){
-                                verdade = 1;
+                            //    verdade = 1;
+                                System.out.println("Oi4");
                                 return p4;
                             }
                         }else{ 
@@ -317,17 +324,20 @@ public class cacheDados {
                                
                                 if(p1.getEndereco()==endereco ){
                                     p1.setConteudo(conteudo);
+                                    auxiliar.setP1(p1);
                                     memoria.modificar(endereco, conteudo);
                                     resposta = 0;
                                 }
                                 if(p2.getEndereco() == endereco){
                                     p2.setConteudo(conteudo);
+                                    auxiliar.setP2(p2);
                                     memoria.modificar(endereco, conteudo);
                                     resposta = 0;
                                     
                                 }
                                 if(p3.getEndereco() == endereco){
                                     p3.setConteudo(conteudo);
+                                    auxiliar.setP3(p3);
                                     memoria.modificar(endereco, conteudo);
                                     resposta = 0;
                                     
@@ -335,12 +345,14 @@ public class cacheDados {
                                 }
                                 if(p4.getEndereco() == endereco){
                                     p4.setConteudo(conteudo);
+                                    auxiliar.setP4(p4);
                                     memoria.modificar(endereco, conteudo);
                                     resposta = 0;
                                    
                                 }
                                     entrei = 1;
                                     semTag = 1;
+                                    return 0;
                            
                         }else{
                             entrei = 0;
@@ -353,9 +365,11 @@ public class cacheDados {
             }
             
             if(entrei == 0 && semTag ==0){
-                System.out.println("uhu");
-                inserir(endereco, memoria);
-               escrever(endereco, conteudo, memoria); 
+      //          System.out.println("uhu");
+                System.out.println("Entrei para escrever mas, dado não estava na cache nem na memória. DADO NOVO!!");
+                memoria.inserir(endereco, conteudo);//inserir na memória
+                inserir(endereco, memoria);//inserir conteudo na cache
+              //  escrever(endereco, conteudo, memoria); 
                resposta = 1;
                 
             }
