@@ -1,10 +1,14 @@
 
 package view;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
+import myclasses.cacheDados;
+import myclasses.cacheInstrucao;
 import myclasses.clock;
 import myclasses.memory;
 import myclasses.palavra;
@@ -80,7 +84,8 @@ public class PagInserirDados extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         txtClock = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtAssociatividade = new javax.swing.JTextField();
+        btnImprimeCaches = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -201,6 +206,11 @@ public class PagInserirDados extends javax.swing.JFrame {
         jLabel5.setText("Qual será o tamanho da cache?");
 
         btnCache.setText("OK");
+        btnCache.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCacheActionPerformed(evt);
+            }
+        });
 
         btnExecucaoPasso.setText("EXECUÇÃO PASSO A PASSO");
         btnExecucaoPasso.addActionListener(new java.awt.event.ActionListener() {
@@ -255,6 +265,13 @@ public class PagInserirDados extends javax.swing.JFrame {
 
         jLabel12.setText("Sua associatividade?");
 
+        btnImprimeCaches.setText("IMPRIMIR CACHES");
+        btnImprimeCaches.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnImprimeCachesActionPerformed(evt);
+            }
+        });
+
         jMenuBar1.setBackground(java.awt.Color.white);
         jMenuBar1.setForeground(java.awt.Color.white);
 
@@ -271,6 +288,31 @@ public class PagInserirDados extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnAdicionarInstrucao)
+                                    .addComponent(btnAlterarInstrucao)
+                                    .addComponent(jLabel7)
+                                    .addComponent(btnExcluirInstrucao))
+                                .addGap(206, 206, 206)
+                                .addComponent(txtAssociatividade, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 133, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel12)
+                                    .addComponent(jLabel5))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtTamCache, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(154, 154, 154)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnExecucaoCompleta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnExecucaoPasso, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE))
+                        .addGap(97, 97, 97))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -309,56 +351,38 @@ public class PagInserirDados extends javax.swing.JFrame {
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(txtValordoPc, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
                                             .addComponent(txtClock))))))
-                        .addGap(18, 163, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jRadioButton10)
-                                    .addComponent(jRadioButton6)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(btnImprimirMem)
-                                        .addComponent(jRadioButton2))
-                                    .addComponent(btnCache))
-                                .addGap(29, 29, 29)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jRadioButton7)
-                                        .addComponent(jRadioButton5))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jRadioButton8)
-                                    .addComponent(jRadioButton12))
-                                .addGap(29, 29, 29)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jRadioButton9)
-                                    .addComponent(jRadioButton11))))
-                        .addGap(54, 54, 54))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnAdicionarInstrucao)
-                                    .addComponent(btnAlterarInstrucao)
-                                    .addComponent(jLabel7)
-                                    .addComponent(btnExcluirInstrucao))
-                                .addGap(206, 206, 206)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 133, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel12)
-                                    .addComponent(jLabel5))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtTamCache, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(154, 154, 154)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnExecucaoCompleta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnExecucaoPasso, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE))
-                        .addGap(97, 97, 97))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jRadioButton10)
+                                            .addComponent(jRadioButton6)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(46, 46, 46)
+                                                .addComponent(jRadioButton2))
+                                            .addComponent(btnCache))
+                                        .addGap(29, 29, 29)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(jRadioButton7)
+                                                .addComponent(jRadioButton5))))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jRadioButton8)
+                                            .addComponent(jRadioButton12))
+                                        .addGap(29, 29, 29)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jRadioButton9)
+                                            .addComponent(jRadioButton11))))
+                                .addGap(54, 54, 54))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(btnImprimirMem)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnImprimeCaches)
+                                .addGap(220, 220, 220))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -401,7 +425,7 @@ public class PagInserirDados extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel12)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txtAssociatividade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(29, 29, 29)
                                 .addComponent(btnCache)))
@@ -416,13 +440,18 @@ public class PagInserirDados extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(55, 55, 55)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel6)
-                                .addComponent(txtValordoPc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(btnImprimirMem))
-                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(57, 57, 57)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel6)
+                                    .addComponent(txtValordoPc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnImprimirMem)
+                                    .addComponent(btnImprimeCaches))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
                             .addComponent(txtClock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -470,6 +499,15 @@ public class PagInserirDados extends javax.swing.JFrame {
     unidadeLogAritm ula = new unidadeLogAritm();
     public static int endereco = 0;
     clock clockTotal = new clock();
+   // public int falhas = 0;
+    cacheInstrucao cacheInstruction;
+    cacheDados cacheDate;
+    int coloqueiValores = 0;
+    List<Integer> falhas = new ArrayList<Integer>();
+    int min = 508;
+    
+    
+    
     
     private void btnAdicionarInstrucaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarInstrucaoActionPerformed
         
@@ -617,7 +655,8 @@ public class PagInserirDados extends javax.swing.JFrame {
 
     private void btnExecucaoPassoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExecucaoPassoActionPerformed
         
-        
+      if(coloqueiValores == 1){
+            
                 //qual estado da máquina de estados eu to com esse clock?
                 int estado = controle.indicaSinais(clockExt.getCounter());//estado 0 tenho q ler determinados sinais
                 txtClock.setText(Integer.toString(clockTotal.getCounter()));
@@ -633,15 +672,25 @@ public class PagInserirDados extends javax.swing.JFrame {
                 String constante;
                 String destino;
                 palavra p;
+                int ocorreuFalha = 0;
                 
-                
-                p = memoria.procurar(Integer.parseInt(bancoRegistrador.getPC()));
-                
-                if(p.endereco==0 && p.getConteudo()=="0"){
-                    System.out.println("Execução completa");
-                    estado = -1;
-                }
-
+             
+               // p = memoria.procurar(Integer.parseInt(bancoRegistrador.getPC()));
+               
+               int n = Integer.parseInt(bancoRegistrador.getPC());
+               System.out.println("Valor de endereço ="+n);
+               p = cacheInstruction.encontrarElemento(n);
+               
+               if(p.endereco==0 && p.getConteudo()=="0"){
+                   System.out.println("Cache miss no ciclo="+clockTotal.getCounter());
+                   falhas.add(clockTotal.getCounter());
+                   clockTotal.setCounter(clockTotal.getCounter()+50);
+                   System.out.println("Clock total fica como="+clockTotal.getCounter());
+                   cacheInstruction.inserir(Integer.parseInt(bancoRegistrador.getPC()), memoria);
+                   p = cacheInstruction.encontrarElemento(Integer.parseInt(bancoRegistrador.getPC()));
+               }
+               
+    
                 switch(estado){
 
                     case 0:
@@ -649,7 +698,7 @@ public class PagInserirDados extends javax.swing.JFrame {
                     //    p = memoria.procurar(Integer.parseInt(bancoRegistrador.getPC()));
                         String dadoLido = p.getConteudo();
                      //   String dadoLido="00001010010100111000100000100000";
-                 //       System.out.println("Li a memoria="+dadoLido);
+                       System.out.println("Li a memoria="+dadoLido);
                    // IMPORTANTE //     int valor =Integer.parseInt(dadoLido, 2) ;
                     //    String a = dadoLido.substring(0,6);//pego o opcode da string
                      //   System.out.println("valor de a="+a);
@@ -748,22 +797,49 @@ public class PagInserirDados extends javax.swing.JFrame {
 
                     case 3://estou fazendo um lw
                      //   System.out.println("Valor do reg saida da ula="+Integer.parseInt(bancoRegistrador.getRegSaidaUla()));
-                        palavra auxiliar = memoria.procurar(Integer.parseInt(bancoRegistrador.getRegSaidaUla())) ;
-                        conteudo = auxiliar.getConteudo();
-                        bancoRegistrador.setMDR(conteudo);
-                     //   System.out.println("Minha memória de dados é="+bancoRegistrador.getMDR());
-                        clockExt.contar();
+                     //   palavra auxiliar = memoria.procurar(Integer.parseInt(bancoRegistrador.getRegSaidaUla())) ;
+                     
+                        palavra auxiliar = cacheDate.encontrarElemento(Integer.parseInt(bancoRegistrador.getRegSaidaUla()));
+                   
+                        if(auxiliar.getConteudo()=="0" && auxiliar.getEndereco()==0){
+                            falhas.add(clockTotal.getCounter());
+                            clockTotal.setCounter(clockTotal.getCounter()+50);
+                            cacheDate.inserir(Integer.parseInt(bancoRegistrador.getPC()), memoria);
+                            auxiliar = cacheDate.encontrarElemento(Integer.parseInt(bancoRegistrador.getRegSaidaUla())); 
+                        }
+                         //   System.out.println("CONTEUDO DA CACHE DE DADOS="+auxiliar.getConteudo()+"e endereço="+auxiliar.getEndereco());
+                                conteudo = auxiliar.getConteudo();
+                                bancoRegistrador.setMDR(conteudo);
+                             //   System.out.println("Minha memória de dados é="+bancoRegistrador.getMDR());
+                      
+                        
+                         clockExt.contar();
                         break;
+                    
+                    
                     case 4:
                         conteudo = bancoRegistrador.getIR();
                         String registradorDestino = conteudo.substring(6, 11);
                         bancoRegistrador.setBancoRegistradores(Integer.parseInt(registradorDestino, 2), bancoRegistrador.getMDR());
                         clockExt.setCounter(0);
                         break;
+                        
+                        
                     case 5://estou fazendo um sw
-                        memoria.inserir(Integer.parseInt(bancoRegistrador.getRegSaidaUla()), bancoRegistrador.getRegB());
+                        ocorreuFalha = cacheDate.escrever(Integer.parseInt(bancoRegistrador.getRegSaidaUla()), bancoRegistrador.getRegB(), memoria);
+                        //memoria.inserir();
+                            if(ocorreuFalha == 0){
+                                System.out.println("Não");
+                            }else{ //bloco não tava mais teve q carregr ele para a memória
+                                falhas.add(clockTotal.getCounter());
+                                clockTotal.setCounter(clockTotal.getCounter()+50);
+                                System.out.println("Sim");
+                            }
+                        
                         clockExt.setCounter(0);
                         break;
+                        
+                        
                     case 6:
                         ula.setValorA(Integer.parseInt(bancoRegistrador.getRegA()));
                         ula.setValorB(Integer.parseInt(bancoRegistrador.getRegB()));
@@ -904,6 +980,8 @@ public class PagInserirDados extends javax.swing.JFrame {
 
                 }
                 clockTotal.contar();
+             
+      }
        // System.out.println("Valor do contador="+clockExt.getCounter());
     }//GEN-LAST:event_btnExecucaoPassoActionPerformed
 
@@ -1210,6 +1288,24 @@ public class PagInserirDados extends javax.swing.JFrame {
                 clockTotal.contar();
         }
     }//GEN-LAST:event_btnExecucaoCompletaActionPerformed
+
+    private void btnCacheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCacheActionPerformed
+        
+        cacheInstruction = new cacheInstrucao(Integer.parseInt(txtTamCache.getText()),Integer.parseInt(txtAssociatividade.getText()) );
+        cacheDate = new cacheDados(Integer.parseInt(txtTamCache.getText()),Integer.parseInt(txtAssociatividade.getText()) );
+        coloqueiValores = 1;
+    }//GEN-LAST:event_btnCacheActionPerformed
+
+    private void btnImprimeCachesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimeCachesActionPerformed
+                System.out.println("------------------------------------------------------------------");
+                System.out.println("INSTRUÇÕES");
+                cacheInstruction.imprimir();
+                System.out.println("DADOS");
+                cacheDate.imprimir();
+                System.out.println("------------------------------------------------------------------");
+
+
+    }//GEN-LAST:event_btnImprimeCachesActionPerformed
     
    public static String extensaoSinalComDesloc(String numero){
         
@@ -2254,6 +2350,7 @@ public class PagInserirDados extends javax.swing.JFrame {
     private javax.swing.JButton btnExcluirInstrucao;
     private javax.swing.JButton btnExecucaoCompleta;
     private javax.swing.JButton btnExecucaoPasso;
+    private javax.swing.JButton btnImprimeCaches;
     private javax.swing.JButton btnImprimirMem;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton12;
@@ -2289,8 +2386,8 @@ public class PagInserirDados extends javax.swing.JFrame {
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTableDados;
     private javax.swing.JTable jTableInstrucoes;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField txtAssociatividade;
     private javax.swing.JTextField txtClock;
     private javax.swing.JTextField txtDado;
     private javax.swing.JTextField txtEndereco;

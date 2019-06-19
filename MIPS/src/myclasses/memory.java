@@ -52,5 +52,20 @@ public class memory {
               System.out.println("Minha memoria tem o seguinte conteudo na posição="+i+"="+aux.getEndereco()+";"+aux.getConteudo());
           }
       }
+      
+      public void modificar(int endereco, String conteudo){
+          int tamanho = m.size();
+          
+          for(int i = 0; i<tamanho; i++){
+              palavra aux = m.get(i);
+                if(aux.getEndereco()==endereco){
+                    aux.setConteudo(conteudo);
+                    m.set(i, aux);
+                }
+          }
+          
+          
+          
+      }
     
 }

@@ -9,7 +9,7 @@ package myclasses;
  *
  * @author andrelise
  */
-public class cacheDados {
+public class cacheInstrucao {
     
     /*Vamos ter um endereço de 32 bits
         4 palavras por bloco
@@ -29,7 +29,7 @@ public class cacheDados {
     public int numVias;
     
     
-    public cacheDados(int tamanho, int via) {
+    public cacheInstrucao(int tamanho, int via) {
         
         bloco[][] aux = new bloco[tamanho][via];
         
@@ -85,7 +85,7 @@ public class cacheDados {
         int tamTag = 32 - num;
         System.out.println("Valor da tag="+tamTag);
         int auxEnd=0;
-        auxEnd = endereco + 508;
+        auxEnd = endereco;
         int condicao = 0;
         
         String tag = verificaTam(conversorDecimalBinario(endereco));
@@ -100,20 +100,12 @@ public class cacheDados {
         bloco aux = this.instrucao[conjunto][via];
         
             aux.setP1(mem.procurar(auxEnd));
-            palavra p1 = mem.procurar(auxEnd);
-            System.out.println("Memoria="+p1.getEndereco()+";"+p1.getConteudo());
             auxEnd = auxEnd + 4;
             aux.setP2(mem.procurar(auxEnd));
-            palavra p2 = mem.procurar(auxEnd);
-            System.out.println("Memoria="+p2.getEndereco()+";"+p2.getConteudo());
             auxEnd = auxEnd + 4;
             aux.setP3(mem.procurar(auxEnd));
-            palavra p3 = mem.procurar(auxEnd);
-            System.out.println("Memoria="+p3.getEndereco()+";"+p3.getConteudo());
             auxEnd = auxEnd + 4;
             aux.setP4(mem.procurar(auxEnd));
-            palavra p4 = mem.procurar(auxEnd);
-            System.out.println("Memoria="+p4.getEndereco()+";"+p4.getConteudo());
             aux.validade=1;
             aux.tag=Integer.parseInt(tag, 2);
             aux.via=1;
@@ -368,8 +360,8 @@ public class cacheDados {
             
         return resposta;
     }
-    
-     public void imprimir(){
+ 
+    public void imprimir(){
         bloco b;
         palavra p1;
         palavra p2;
@@ -406,6 +398,6 @@ public class cacheDados {
     }
     
     
-    
-    
 }
+
+
