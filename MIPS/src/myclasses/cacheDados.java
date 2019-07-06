@@ -5,21 +5,14 @@
  */
 package myclasses;
 
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author andrelise
  */
 public class cacheDados {
     
-    /*Vamos ter um endereço de 32 bits
-        4 palavras por bloco
-        → 8 bytes por palavra:: bits para offset de byte = log2 8 =4
-        → bits para offset de palavra = log2 4 = 2
-        → bits para indice = log2 numCache
-        → tag = 32 - 8 - 2 - indice
-    
-      int val = (int) (Math.log(64)/Math.log(2));
-    */
     
     public bloco [][]instrucao;
     public int offsetByte;
@@ -29,11 +22,21 @@ public class cacheDados {
     public int numVias;
     
     
+    /*Vamos ter um endereço de 32 bits
+        4 palavras por bloco
+        → 4 bytes por palavra:: bits para offset de byte = log2 4 =2
+        → bits para offset de palavra = log2 4 = 2
+        → bits para indice = log2 numCache
+        → tag = 32 - 2 - 2 - indice
+    
+      int val = (int) (Math.log(64)/Math.log(2));
+    */
+    
+    
     public cacheDados(int tamanho, int via) {
         
+       
         bloco[][] aux = new bloco[tamanho][via];
-        
-        
         for(int i = 0; i<tamanho; i++){
             for(int j = 0; j<via; j++){
                
@@ -46,12 +49,9 @@ public class cacheDados {
         
         this.tamanhoCache = tamanho;
         this.numVias=via;
-        this.offsetByte =(int)  (Math.log(8)/Math.log(2));//  int val = (int) (Math.log(64)/Math.log(2));
-  //      System.out.println("Offset de byte="+getOffsetByte());
+        this.offsetByte =(int)  (Math.log(4)/Math.log(2));//  int val = (int) (Math.log(64)/Math.log(2));
         this.offsetPalavra =(int)  (Math.log(4)/Math.log(2));//  int val = (int) (Math.log(64)/Math.log(2));
-   //     System.out.println("Offset de palavra="+getOffsetPalavra());
         this.tamIndice = (int) (Math.log(tamanho)/Math.log(2));
-   //     System.out.println("Índice="+getTamIndice());
         this.instrucao = aux;
     }
 
@@ -211,7 +211,7 @@ public class cacheDados {
             //tá cheio preciso remover
             if(cheio == 1){
                    for(int i = 0; i<getNumVias(); i++){
-                       if(instrucao[conjunto][i].getId()==0){//é o primeiro né
+                       if(instrucao[conjunto][i].getId()==0){//é o primeiro
                           instrucao[conjunto][i].setId(getNumVias()+1); 
                           val = i;
                        }else{
@@ -383,6 +383,7 @@ public class cacheDados {
         return resposta;
     }
     
+   //  public void imprimir(DefaultTableModel dtmCache){
      public void imprimir(){
         bloco b;
         palavra p1;
@@ -390,6 +391,12 @@ public class cacheDados {
         palavra p3;
         palavra p4;        
                 
+           //Object[] aux = {"", txtInstrucao.getText()}; 
+            //dados = aux;
+       //     dtmCache.addRow(dados);
+        
+        
+  
         for(int i = 0; i<getTamanhoCache(); i++){
             for(int j = 0; j<getNumVias(); j++){
                 b = instrucao[i][j];

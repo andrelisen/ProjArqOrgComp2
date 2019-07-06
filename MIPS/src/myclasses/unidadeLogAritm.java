@@ -53,8 +53,9 @@ public class unidadeLogAritm {
             break;
             
             case "sll":
-                valorB = potencia(valorB);
-                resultado = valorA * valorB;
+            valorB = potencia(valorB);
+            resultado = valorA << valorB;
+                
             setSaida(resultado);
                 break;
             
@@ -65,7 +66,7 @@ public class unidadeLogAritm {
                 
             case "and":
                 resultado = valorA & valorB;
-                System.out.println("Dentro da ULA ="+resultado);
+             //   System.out.println("Dentro da ULA ="+resultado);
             setSaida(resultado);
                 break;
                 
@@ -80,8 +81,10 @@ public class unidadeLogAritm {
                 break;
                 
             case "srl":
-                resultado = valorA / valorB;
-            setSaida(resultado);
+                valorB = potencia(valorB);
+                resultado = valorA >> valorB;
+            
+                setSaida(resultado);
                 break;
                 
             case "slt":
@@ -92,6 +95,15 @@ public class unidadeLogAritm {
                 }
             setSaida(resultado);
                 break;
+            
+            case "slti":
+                if(valorA < valorB){
+                    resultado = 1;
+                }else{
+                    resultado = 0;
+                }
+            setSaida(resultado);
+                break;    
                 
             case "jr":
                 resultado = valorA; //ir para a posição de memória 
@@ -99,6 +111,7 @@ public class unidadeLogAritm {
                 break;
                 
             case "addi":
+             //   System.out.println("Valor de a="+valorA+"; valor de b="+valorB);
                 resultado = valorA + valorB;
             setSaida(resultado);
                 break;
@@ -147,6 +160,14 @@ public class unidadeLogAritm {
                 }
             setSaida(resultado);
                 break;
+                
+            case "mult":
+                    
+                    resultado = valorA * valorB;
+                    
+                    setSaida(resultado);
+                    
+                    break;
         }
     }
 

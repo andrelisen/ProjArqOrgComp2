@@ -18,7 +18,20 @@ public class memory {
             this.dadoLido = dadoLido;
        }
 
+       public memory() {
+           int endereco = 0;
+           
+           for(int i = 0; i<256; i++){//inicializar a memória
+                 palavra novaPalavra = new palavra(endereco, "0"); 
+                 endereco = endereco + 4;
+                 m.add(novaPalavra);
+           }
+           
+       }
+
       
+      
+       
       
       public palavra procurar(int endereco)
       {
@@ -40,8 +53,25 @@ public class memory {
       }
       
       public void inserir(int endereco, String conteudo){
-          palavra novaPalavra = new palavra(endereco, conteudo);
-          m.add(novaPalavra);
+                    int tamanho = m.size();
+          int nao=0;
+          
+                   System.out.println("Endereço="+endereco+";Cont="+conteudo);
+          for(int i = 0; i<tamanho; i++){
+              palavra aux = m.get(i);
+                if(aux.getEndereco()==endereco){
+                    aux.setConteudo(conteudo);
+                    m.set(i, aux);
+                    return;
+                }else{
+                    nao = 1;
+                }
+          }
+          
+          if(nao == 1){
+              System.out.println("Nao tinha esse endereço na memória!!!!!!");
+            //  inserir(endereco, conteudo);
+          }
       }
       
       public void imprimir(){
@@ -49,7 +79,7 @@ public class memory {
           
           for(int i = 0; i< tamanho; i++){
               palavra aux = m.get(i);
-              System.out.println("Minha memoria tem o seguinte conteudo na posição="+i+"="+aux.getEndereco()+";"+aux.getConteudo());
+              System.out.println("Minha memoria tem o seguinte conteudo na posição="+aux.getEndereco()+";"+aux.getConteudo());
           }
       }
       

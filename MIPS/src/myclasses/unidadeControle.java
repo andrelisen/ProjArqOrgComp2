@@ -143,6 +143,27 @@ public class unidadeControle {
                 FontePC = 0;
                 estado = 13;
                 break;
+                
+            case 14://addi
+                        /*RegDst = 0 EscReg = 1 MemParaReg = 0*/
+                EscReg = 1;
+                MemParaReg = 0;
+                RegDst = 0;                
+                estado = 14;
+                break;
+            case 15://lui
+                LerMem = 0;
+                IouD = 2; //o endereço vem do campo da constante
+                estado = 15;
+                RegDst = 0;
+                break;
+            case 16://slti
+                ULAFonteA = 1;
+                ULAFonteB = 1;
+                ULAOp = 2;//vou usar em decimal, mas binário é 10
+                estado = 16;
+                break;
+               
         }
                 
    return estado;

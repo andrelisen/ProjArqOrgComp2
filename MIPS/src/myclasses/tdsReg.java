@@ -15,6 +15,9 @@ public class tdsReg {
         public String regB= "0";
         public String regSaidaUla= "0";
         public String []bancoRegistradores = new String[32];
+        public pilha sp = new pilha();
+        
+        
         /*O que é cada posição do meu banco de registradores?
         [0]=$zero
         [2 a 3]=$vo e $v1
@@ -23,10 +26,11 @@ public class tdsReg {
         [16 a 23]=$s0 a $s7
         [24 a 25]=$t8 a $t9
         [28]= $gp(ponteiro global)
-        [29]=$sp(stack pointer)
+        [29]=$sp(stack pointer) --> precisa ser uma pilha 
         [30]=$fp(frame pointer)
         [31]=$ra(endereço de retorno)
         */
+
 
     public tdsReg() {
         String[] aux = new String[32];
@@ -35,6 +39,8 @@ public class tdsReg {
         }
         
         this.bancoRegistradores=aux;
+    
+        
     }
 
         
@@ -92,12 +98,18 @@ public class tdsReg {
     }
 
     public void setBancoRegistradores(int posicao, String valor) {
+        
+     //   System.out.println("A posicao é="+posicao);
+        
+      //  if(posicao == 29){
+    //        criaStackPointer(Integer.parseInt(valor));//criando o stack ponter
+        //    System.out.println("Oi criou o stack pointer, que legal!!");
+ //       }
+//        else{
         bancoRegistradores[posicao] = valor;
+  //      }
+        
     }
 
-
-        
-  
-        
-        
+      
 }

@@ -50,8 +50,6 @@ public class PagInserirDados extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         txtInstrucao = new javax.swing.JTextField();
         btnAdicionarInstrucao = new javax.swing.JButton();
-        btnExcluirInstrucao = new javax.swing.JButton();
-        btnAlterarInstrucao = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -62,25 +60,23 @@ public class PagInserirDados extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         txtDado = new javax.swing.JTextField();
         btnAdicionarDados = new javax.swing.JButton();
-        btnAlterarDados = new javax.swing.JButton();
-        btnExcluirDados = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        txtValordoPc = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        txtClock = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         txtTamCache = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         txtAssociatividade = new javax.swing.JTextField();
         btnCache = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        txtValordoPc = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
         btnExecucaoCompleta = new javax.swing.JButton();
-        btnImprimirMem = new javax.swing.JButton();
         btnExecucaoPasso = new javax.swing.JButton();
+        btnImprimirMem = new javax.swing.JButton();
         btnImprimeCaches = new javax.swing.JButton();
+        btnFalha = new javax.swing.JButton();
+        txtClock = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
         radioPC = new javax.swing.JRadioButton();
         radioCACHEINSTRUCOES = new javax.swing.JRadioButton();
@@ -89,6 +85,7 @@ public class PagInserirDados extends javax.swing.JFrame {
         radioULA = new javax.swing.JRadioButton();
         radioCONTROLE = new javax.swing.JRadioButton();
         radioCACHEDADOS = new javax.swing.JRadioButton();
+        jPanel7 = new javax.swing.JPanel();
 
         jLabel4.setText("jLabel4");
 
@@ -146,20 +143,6 @@ public class PagInserirDados extends javax.swing.JFrame {
             }
         });
 
-        btnExcluirInstrucao.setText("Excluir");
-        btnExcluirInstrucao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnExcluirInstrucaoActionPerformed(evt);
-            }
-        });
-
-        btnAlterarInstrucao.setText("Alterar");
-        btnAlterarInstrucao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAlterarInstrucaoActionPerformed(evt);
-            }
-        });
-
         jLabel11.setText("*NÃO INSERIR PARÊNTESES OU CIFRÃO");
 
         jLabel13.setText("*APENAS ESPAÇOS");
@@ -193,109 +176,7 @@ public class PagInserirDados extends javax.swing.JFrame {
             }
         });
 
-        btnAlterarDados.setText("Alterar");
-        btnAlterarDados.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAlterarDadosActionPerformed(evt);
-            }
-        });
-
-        btnExcluirDados.setText("Excluir");
-        btnExcluirDados.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnExcluirDadosActionPerformed(evt);
-            }
-        });
-
         jLabel9.setText("*Endereços a partir de 512");
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel3)
-                                .addGap(9, 9, 9)
-                                .addComponent(txtDado, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnAlterarDados)
-                            .addComponent(btnExcluirDados)))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(btnAdicionarDados)))
-                .addContainerGap(36, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnExcluirDados)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAlterarDados)
-                .addGap(150, 150, 150))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtDado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAdicionarDados))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel9)
-                .addContainerGap(13, Short.MAX_VALUE))
-        );
-
-        jLabel6.setText("Valor do PC");
-
-        jLabel10.setText("CLOCK ");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel10))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtClock, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtValordoPc, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(26, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(txtValordoPc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(txtClock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
 
         jLabel5.setText("Qual será o tamanho da cache?");
 
@@ -346,17 +227,43 @@ public class PagInserirDados extends javax.swing.JFrame {
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
+        jLabel6.setText("Valor do PC");
+
+        jLabel10.setText("CLOCK ");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(txtValordoPc, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel6))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jLabel10)))
+                .addContainerGap(38, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6)
+                .addGap(5, 5, 5)
+                .addComponent(txtValordoPc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel10)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         btnExecucaoCompleta.setText("EXECUÇÃO COMPLETA");
         btnExecucaoCompleta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExecucaoCompletaActionPerformed(evt);
-            }
-        });
-
-        btnImprimirMem.setText("IMPRIMIR MEMÓRIA");
-        btnImprimirMem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnImprimirMemActionPerformed(evt);
             }
         });
 
@@ -367,6 +274,13 @@ public class PagInserirDados extends javax.swing.JFrame {
             }
         });
 
+        btnImprimirMem.setText("IMPRIMIR MEMÓRIA");
+        btnImprimirMem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnImprimirMemActionPerformed(evt);
+            }
+        });
+
         btnImprimeCaches.setText("IMPRIMIR CACHES");
         btnImprimeCaches.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -374,36 +288,101 @@ public class PagInserirDados extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnExecucaoPasso)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+        btnFalha.setText("IMPRIMIR FALHAS");
+        btnFalha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFalhaActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(txtClock, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(76, Short.MAX_VALUE))))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnExecucaoPasso)
+                            .addComponent(btnExecucaoCompleta))
+                        .addGap(136, 136, 136))))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel3)
+                        .addGap(9, 9, 9)
+                        .addComponent(txtDado, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnAdicionarDados)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnImprimirMem)
-                            .addComponent(btnImprimeCaches)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnExecucaoCompleta)))
-                .addGap(28, 28, 28))
+                            .addComponent(btnImprimeCaches)
+                            .addComponent(btnFalha))
+                        .addGap(153, 153, 153))))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnExecucaoCompleta, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnExecucaoPasso, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnImprimirMem)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnImprimeCaches)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel2)
+                                    .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel3)
+                                    .addComponent(txtDado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(btnAdicionarDados))))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtClock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnExecucaoCompleta, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnExecucaoPasso, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(btnImprimirMem)
+                        .addGap(26, 26, 26)
+                        .addComponent(btnImprimeCaches))
+                    .addComponent(jLabel9))
+                .addGap(18, 18, 18)
+                .addComponent(btnFalha)
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         radioPC.setText("PC");
@@ -431,12 +410,12 @@ public class PagInserirDados extends javax.swing.JFrame {
                     .addComponent(radioCACHEINSTRUCOES)
                     .addComponent(radioMP)
                     .addComponent(radioBREGISTRADORES))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(radioCONTROLE)
                     .addComponent(radioCACHEDADOS)
                     .addComponent(radioULA))
-                .addGap(157, 157, 157))
+                .addGap(115, 115, 115))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -455,7 +434,18 @@ public class PagInserirDados extends javax.swing.JFrame {
                     .addComponent(radioCACHEDADOS))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(radioBREGISTRADORES)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 263, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 199, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -463,10 +453,18 @@ public class PagInserirDados extends javax.swing.JFrame {
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addGap(462, 462, 462)
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel13)
                             .addComponent(jLabel11)
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addComponent(jLabel1)
@@ -474,49 +472,19 @@ public class PagInserirDados extends javax.swing.JFrame {
                                 .addComponent(txtInstrucao, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnAdicionarInstrucao))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnExcluirInstrucao)
-                                    .addComponent(btnAlterarInstrucao))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel13)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel5Layout.createSequentialGroup()
-                            .addGap(21, 21, 21)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 12, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(8, 8, 8)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(34, Short.MAX_VALUE))
-            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                .addComponent(btnExcluirInstrucao)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnAlterarInstrucao)
-                                .addGap(85, 85, 85)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
                             .addComponent(txtInstrucao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -524,10 +492,12 @@ public class PagInserirDados extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel13))
+                        .addComponent(jLabel13)
+                        .addGap(16, 16, 16)
+                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(280, 280, 280)
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -535,15 +505,13 @@ public class PagInserirDados extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap()
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(21, 21, 21))
+            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 529, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -559,13 +527,11 @@ public class PagInserirDados extends javax.swing.JFrame {
     unidadeLogAritm ula = new unidadeLogAritm();
     public static int endereco = 0;
     clock clockTotal = new clock();
-   // public int falhas = 0;
     cacheInstrucao cacheInstruction;
     cacheDados cacheDate;
     int coloqueiValores = 0;
     List<Integer> falhas = new ArrayList<Integer>();
     int ultimaInstInserida = 0;
-   // int ultimoDadoInserida = 0;
     
     
     
@@ -575,6 +541,7 @@ public class PagInserirDados extends javax.swing.JFrame {
         DefaultTableModel dtmInstrucao = (DefaultTableModel) jTableInstrucoes.getModel(); 
         Object[] dados;
        
+        
         int somalinhas = jTableInstrucoes.getModel().getRowCount(); //retorna número de linhas inseridas na tabela
         
         if(somalinhas == 128)
@@ -601,54 +568,6 @@ public class PagInserirDados extends javax.swing.JFrame {
         txtInstrucao.setText("");
     }//GEN-LAST:event_btnAdicionarInstrucaoActionPerformed
 
-    private void btnExcluirInstrucaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirInstrucaoActionPerformed
-        
-        int marcado = jTableInstrucoes.getSelectedRow();
-        int quantidade = 0;
-        
-        System.out.println("Meu marcado é:"+marcado);
-        
-        if(marcado == -1)
-        {
-            JOptionPane.showMessageDialog(null, "Selecione um campo para excluir");
-        }else{
-            DefaultTableModel dtmInstrucao = (DefaultTableModel) jTableInstrucoes.getModel(); 
-            dtmInstrucao.removeRow(marcado);
-            
-            quantidade = jTableInstrucoes.getModel().getRowCount();
-            
-            int x = marcado;
-            
-            if(x != quantidade - 1)
-            {
-                while(x < quantidade) 
-                {
-                jTableInstrucoes.setValueAt(x, x , 0); //valor que quero colocar, linha, coluna
-                x++;
-                } 
-            }
-     
-           }
-       
-    }//GEN-LAST:event_btnExcluirInstrucaoActionPerformed
-
-    private void btnAlterarInstrucaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarInstrucaoActionPerformed
-        
-        int marcado = jTableInstrucoes.getSelectedRow();
-        
-        System.out.println("Meu marcado é:"+marcado);
-        
-        if(marcado == -1)
-        {
-            JOptionPane.showMessageDialog(null, "Selecione um campo para alterar");
-        }else{
-         
-            jTableInstrucoes.setValueAt(txtInstrucao.getText(), marcado, 1);
-            
-        }
-         txtInstrucao.setText("");
-    }//GEN-LAST:event_btnAlterarInstrucaoActionPerformed
-
     private void btnAdicionarDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarDadosActionPerformed
             
         DefaultTableModel dtmDados = (DefaultTableModel) jTableDados.getModel(); 
@@ -673,40 +592,6 @@ public class PagInserirDados extends javax.swing.JFrame {
        
     }//GEN-LAST:event_btnAdicionarDadosActionPerformed
 
-    private void btnAlterarDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarDadosActionPerformed
-   
-        int marcado = jTableDados.getSelectedRow();
-        
-        System.out.println("Meu marcado é:"+marcado);
-        
-        if(marcado == -1)
-        {
-            JOptionPane.showMessageDialog(null, "Selecione um campo para alterar");
-        }else{
-         
-            jTableDados.setValueAt(txtDado.getText(), marcado, 1);
-            
-        }
-         txtInstrucao.setText("");
-   
-
-
-    }//GEN-LAST:event_btnAlterarDadosActionPerformed
-
-    private void btnExcluirDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirDadosActionPerformed
-        
-        int marcado = jTableDados.getSelectedRow();
-                
-        if(marcado == -1)
-        {
-            JOptionPane.showMessageDialog(null, "Selecione um campo para excluir");
-        }else{
-            DefaultTableModel dtmDado = (DefaultTableModel) jTableDados.getModel(); 
-            dtmDado.removeRow(marcado);
-              }
-
-    }//GEN-LAST:event_btnExcluirDadosActionPerformed
-
     private void btnImprimirMemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimirMemActionPerformed
         System.out.println("A memória é");
         memoria.imprimir();
@@ -719,10 +604,12 @@ public class PagInserirDados extends javax.swing.JFrame {
       if(coloqueiValores == 1){
             
                 //qual estado da máquina de estados eu to com esse clock?
+                radioCONTROLE.setSelected(true);
                 int estado = controle.indicaSinais(clockExt.getCounter());//estado 0 tenho q ler determinados sinais
                 txtClock.setText(Integer.toString(clockTotal.getCounter()));
                 txtValordoPc.setText(bancoRegistrador.getPC());
-
+             //   System.out.println("Valor do clock da maquina d estados="+clockTotal.getCounter());
+                
                 int instrucao =0;
                 String conteudo;
                 String operacao;
@@ -734,8 +621,10 @@ public class PagInserirDados extends javax.swing.JFrame {
                 String destino;
                 palavra p;
                 int ocorreuFalha = 0;
-                
+                String registradorDestino;
+                String transformado;
                         
+                
                 //System.out.println("Ultima instrucao = "+ultimaInstInserida);
     
                 if(ultimaInstInserida+4 <= Integer.parseInt(bancoRegistrador.getPC())){
@@ -745,13 +634,21 @@ public class PagInserirDados extends javax.swing.JFrame {
                 switch(estado){
 
                     case 0: //INCREMENTO O PC AQUI
-                   
-                        //Esse é os locais que estou acessando nesse estado, liga eles
+                        
+                        //zera todo mundo
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(false);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        //seções acessadas nesse caso
                         radioPC.setSelected(true);
                         radioCACHEINSTRUCOES.setSelected(true);
                         radioBREGISTRADORES.setSelected(true);
-                        
-                        
+                        radioULA.setSelected(true);
                         
                         p = cacheInstruction.encontrarElemento(Integer.parseInt(bancoRegistrador.getPC()));
                         
@@ -773,23 +670,43 @@ public class PagInserirDados extends javax.swing.JFrame {
                     //    System.out.println("Lido="+bancoRegistrador.getIR());
                         
                         ula.setValorA(Integer.parseInt(bancoRegistrador.getPC()));
-                        System.out.println("-ESTADO0- ULA VALOR A="+ula.getValorA());
+                     //   System.out.println("-ESTADO0- ULA VALOR A="+ula.getValorA());
                         ula.setValorB(4);
-                        System.out.println("-ESTADO0- ULA VALOR B="+ula.getValorB());
+             //         System.out.println("-ESTADO0- ULA VALOR B="+ula.getValorB());
                         ula.setOperacao("add"); 
                         ula.executarOperacao();//liga ula
                         bancoRegistrador.setPC(Integer.toString(ula.getSaida())); //liga pc
                         clockExt.contar();
-                        System.out.println("PC="+Integer.parseInt(bancoRegistrador.getPC()));
+               //         System.out.println("PC EM ESTADO 0="+Integer.parseInt(bancoRegistrador.getPC()));
                         clockTotal.contar();
                         break;
 
-                    case 1:
+                    case 1://decodificação 
+                        
+                         //zera todo mundo
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(false);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        //seções acessadas nesse caso
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(true);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(true);
+                        radioULA.setSelected(true);
+                        
+                        
                          conteudo = bancoRegistrador.getIR();//retorna o conteudo do reg. instruções
                          operacao = conteudo.substring(0, 6);
                          instrucao = Integer.parseInt(operacao, 2);
                          controle.setInstrucao(instrucao);//guardo instrução no controle
-                         System.out.println("A instrucao lida é="+controle.getInstrucao());
+                //         System.out.println("A instrucao lida é="+controle.getInstrucao());
                              if(instrucao == 43){//é um sw
                             //     System.out.println("É UM SW");
                                      reg1 = conteudo.substring(11, 16); //rt
@@ -827,14 +744,14 @@ public class PagInserirDados extends javax.swing.JFrame {
                              //    System.out.println("Valor do reg1="+r1+"; reg2="+r2);
 
                                  bancoRegistrador.setRegA(bancoRegistrador.getBancoRegistradores(r1));
-                                 System.out.println("ESTADO 1, BANCO REG A="+bancoRegistrador.getRegA());
+                   //              System.out.println("ESTADO 1, BANCO REG A="+bancoRegistrador.getRegA());
                                  bancoRegistrador.setRegB(bancoRegistrador.getBancoRegistradores(r2));
-                                 System.out.println("ESTADO 1, BANCO REG B="+bancoRegistrador.getRegA());
+                  //               System.out.println("ESTADO 1, BANCO REG B="+bancoRegistrador.getRegA());
                             //     System.out.println("Dentro da decodificacao, BANCO REG ="+bancoRegistrador.getRegB());
 
                                  estSignal = conteudo.substring(16,32);
-
                                  estSignal = extensaoSinalComDesloc(estSignal);
+                    //             System.out.println("Estendendo sinal fica="+Integer.parseInt(estSignal, 2));
                                  ula.setValorA(Integer.parseInt(bancoRegistrador.getPC()));
                                  ula.setValorB(Integer.parseInt(estSignal, 2));
                                  ula.setOperacao("add");
@@ -855,16 +772,38 @@ public class PagInserirDados extends javax.swing.JFrame {
                              if(instrucao == 5){//bne
                                  clockExt.setCounter(10);
                              }
-                             if(instrucao == 35 || instrucao == 43){ //lw ou sw
+                             if(instrucao == 35 || instrucao == 43 || instrucao == 8 || instrucao == 13
+                                     || instrucao == 10 || instrucao == 12 || instrucao == 15){ //lw ou sw VOU ADICIONAR O ADDI QUE É IMEDIATO OK
+                                 //vou adicionar tambem os outros imediatos hehe ORI, SLTI, ANDI
                                  clockExt.contar();
                              }
-      
+            //            System.out.println("PC EM ESTADO 1="+Integer.parseInt(bancoRegistrador.getPC()));      
 
                        // System.out.println("PC="+Integer.parseInt(bancoRegistrador.getPC()));
                 clockTotal.contar();
                         break;
-                    case 2:
+                    case 2://E DO TIPO IMEDIATO
 
+                            //zera todo mundo
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(false);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        //seções acessadas nesse caso
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(true);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(true);
+                        
+                        
+                        
                         ula.setValorA(Integer.parseInt(bancoRegistrador.getRegA()));
                      //   System.out.println("RegA="+ula.getValorA());
                         conteudo = bancoRegistrador.getIR();
@@ -889,39 +828,132 @@ public class PagInserirDados extends javax.swing.JFrame {
                        //         System.out.println("Vamos fazer um sw");
                                 clockExt.setCounter(5);//meu próximo estado
                             }
+                            
+                            if(controle.getInstrucao() == 8){//addi
+          //                      System.out.println("Foi para o estado da instrucao addi");
+                                clockExt.setCounter(14);
+                            }
+                            
+                            if(controle.getInstrucao() == 13){//ori
+                                clockExt.setCounter(12);
+                            }
+                            
+                            if(controle.getInstrucao() == 10){//slti
+                    //            System.out.println("Instrução do tipo slti");
+                                clockExt.setCounter(16);
+                            }
+                            
+                            if(controle.getInstrucao() == 12){//andi
+                                clockExt.setCounter(11);
+                            }
+                            
+                            if(controle.getInstrucao() == 15){
+           //                     System.out.println("OPA LUI FUNCIONANDO AQUI");
+                                clockExt.setCounter(15);
+                            }
+                            
+                            
+                            /*instrucao == 8 ADDI || instrucao == 13 ORI
+                                     || instrucao == 10 SLTI || instrucao == 12 ANDI*/
+        //                System.out.println("PC EM ESTADO 2="+Integer.parseInt(bancoRegistrador.getPC()));      
+                            
                       //  System.out.println("A instrucao é="+controle.getInstrucao());
                    //     System.out.println("PC="+Integer.parseInt(bancoRegistrador.getPC()));
                 clockTotal.contar();
                         break;
 
                     case 3://estou fazendo um lw
-                    
-                        palavra auxiliar = cacheDate.encontrarElemento(Integer.parseInt(bancoRegistrador.getRegSaidaUla()));
-                   
-                        if(auxiliar.getConteudo()=="0" && auxiliar.getEndereco()==0){
-                            falhas.add(clockTotal.getCounter());
-                            clockTotal.setCounter(clockTotal.getCounter()+50);
-                   //         System.out.println("Para carregar da memoria, o endereço é="+Integer.parseInt(bancoRegistrador.getRegSaidaUla()));
-                            cacheDate.inserir(Integer.parseInt(bancoRegistrador.getRegSaidaUla()), memoria);
-                            auxiliar = cacheDate.encontrarElemento(Integer.parseInt(bancoRegistrador.getRegSaidaUla())); 
-                        }
-                         //   System.out.println("CONTEUDO DA CACHE DE DADOS="+auxiliar.getConteudo()+"e endereço="+auxiliar.getEndereco());
-                                conteudo = auxiliar.getConteudo();
-                                bancoRegistrador.setMDR(conteudo);
-                             //   System.out.println("Minha memória de dados é="+bancoRegistrador.getMDR());
-                      
                         
+                            //zera todo mundo
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(false);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        //seções acessadas nesse caso
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(true);
+                        radioCACHEDADOS.setSelected(true);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        
+                        
+                        conteudo = bancoRegistrador.getIR();
+                        
+                        registradorDestino = conteudo.substring(11, 16); //ta com problema para ver o sp
+                  //      System.out.println("Aqui é="+Integer.parseInt(registradorDestino, 2));
+                        
+                        
+                        if(Integer.parseInt(registradorDestino, 2) == 29){  //lw s0 0 sp carrego para s0 o que esta contido em sp na posicao 0
+                            //tenho que tratar diferente né 
+                   
+                            //System.out.println("Oi, acho que é o STACK POINTER AAAAAAAAAAAAAA");
+                            //bancoRegistrador.sp.push("ANDRELISEEE",0);
+                            //bancoRegistrador.sp.push("ANDRELISEEE",4);
+                            //System.out.println("Vai tirar a posicao="+Integer.parseInt(bancoRegistrador.getRegSaidaUla()));
+                            conteudo = bancoRegistrador.sp.pop(Integer.parseInt(bancoRegistrador.getRegSaidaUla())); //ta tirando do topo da pilha
+                          //  System.out.println("Tirei o ="+conteudo);
+                            bancoRegistrador.setMDR(conteudo);
+                            clockExt.contar();
+                           // bancoRegistrador.sp.verPilha();
+                            
+                        }else{
+                            palavra auxiliar = cacheDate.encontrarElemento(Integer.parseInt(bancoRegistrador.getRegSaidaUla()));
+                   
+                            if(auxiliar.getConteudo()=="0" && auxiliar.getEndereco()==0){
+                                falhas.add(clockTotal.getCounter());
+                                clockTotal.setCounter(clockTotal.getCounter()+50);
+                       //         System.out.println("Para carregar da memoria, o endereço é="+Integer.parseInt(bancoRegistrador.getRegSaidaUla()));
+                                cacheDate.inserir(Integer.parseInt(bancoRegistrador.getRegSaidaUla()), memoria);
+                                auxiliar = cacheDate.encontrarElemento(Integer.parseInt(bancoRegistrador.getRegSaidaUla())); 
+                            }
+                             //   System.out.println("CONTEUDO DA CACHE DE DADOS="+auxiliar.getConteudo()+"e endereço="+auxiliar.getEndereco());
+                                    conteudo = auxiliar.getConteudo();
+                                    bancoRegistrador.setMDR(conteudo);
+                                 //   System.out.println("Minha memória de dados é="+bancoRegistrador.getMDR());
+
                          clockExt.contar();
+                        }
+                        
+                        
                  //       System.out.println("PC="+Integer.parseInt(bancoRegistrador.getPC()));
                 clockTotal.contar();
                         break;
                     
                     
-                    case 4:
+                    case 4://faz parte do load
+                        
+                            //zera todo mundo
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(false);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        //seções acessadas nesse caso
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(true);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        
                         
                         conteudo = bancoRegistrador.getIR();
-                        String registradorDestino = conteudo.substring(6, 11);
+                        registradorDestino = conteudo.substring(6, 11);
+            //            System.out.println("O reg de destino e="+Integer.parseInt(registradorDestino, 2));
                         bancoRegistrador.setBancoRegistradores(Integer.parseInt(registradorDestino, 2), bancoRegistrador.getMDR());
+                   //     System.out.println("Guardando no registrador="+Integer.parseInt(registradorDestino, 2)+"O conteudode="+bancoRegistrador.getMDR());
                         clockExt.setCounter(0);
                   //      System.out.println("PC="+Integer.parseInt(bancoRegistrador.getPC()));
                 clockTotal.contar();
@@ -929,40 +961,105 @@ public class PagInserirDados extends javax.swing.JFrame {
                         
                         
                     case 5://estou fazendo um sw
-                        conteudo = bancoRegistrador.getIR();
-                        destino = conteudo.substring(6, 11);
                         
-                    //    System.out.println("Vou guardar no endereço "+Integer.parseInt(bancoRegistrador.getRegSaidaUla())+", o seguinte conteudo="+bancoRegistrador.getBancoRegistradores(Integer.parseInt(destino, 2)));
+                        //endereço, conteudo
+                        
+                            //zera todo mundo
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(false);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        //seções acessadas nesse caso
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(true);
+                        radioCACHEDADOS.setSelected(true);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        
+                        
+                        conteudo = bancoRegistrador.getIR(); //conteudo, endereco
+                        
+                        registradorDestino = conteudo.substring(11, 16); //ta com problema para ver o sp
+                 //       System.out.println("Aqui é="+Integer.parseInt(registradorDestino, 2));
+                        
+                        if(Integer.parseInt(registradorDestino, 2) == 29){  
+                            
+                        //    bancoRegistrador.sp.verPilha();
+                            
+                            destino = conteudo.substring(6, 11);
+
+                            bancoRegistrador.sp.push(bancoRegistrador.getBancoRegistradores(Integer.parseInt(destino, 2)), Integer.parseInt(bancoRegistrador.getRegSaidaUla()));
+                            
+                            
+                            
+                        }else{
+                            destino = conteudo.substring(6, 11);
+                        
+                      //  System.out.println("Vou guardar no endereço "+Integer.parseInt(bancoRegistrador.getRegSaidaUla())+", o seguinte conteudo="+bancoRegistrador.getBancoRegistradores(Integer.parseInt(destino, 2)));
                         
                         ocorreuFalha = cacheDate.escrever(Integer.parseInt(bancoRegistrador.getRegSaidaUla()), bancoRegistrador.getBancoRegistradores(Integer.parseInt(destino, 2)), memoria);
                         //memoria.inserir();
                             if(ocorreuFalha == 0){
-                                System.out.println("Não");
+                             //   System.out.println("Não");
                             }else{ //bloco não tava mais teve q carregr ele para a memória
                                 falhas.add(clockTotal.getCounter());
                                 clockTotal.setCounter(clockTotal.getCounter()+50);
-                                System.out.println("Sim");
+                             //   System.out.println("Sim");
                             }
                         
-                        clockExt.setCounter(0);
-                        zerarReg();
                     //    System.out.println("PC="+Integer.parseInt(bancoRegistrador.getPC()));
+                        }
+                        
+                        
+                        zerarReg();
+                        
+                        clockExt.setCounter(0);
+                        
                         clockTotal.contar();
+                        
                         break;
                         
                         
-                    case 6:
+                    case 6://tiro r
+                        
+                           //zera todo mundo
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(false);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        //seções acessadas nesse caso
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(true);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(true);
+                        
+                        
+                        
                         ula.setValorA(Integer.parseInt(bancoRegistrador.getRegA()));
-                        System.out.println("ULA VALOR A="+ula.getValorA());
+           //             System.out.println("ULA VALOR A="+ula.getValorA());
                         ula.setValorB(Integer.parseInt(bancoRegistrador.getRegB()));
-                        System.out.println("ULA VALOR B="+ula.getValorB());
+       //                 System.out.println("ULA VALOR B="+ula.getValorB());
                         String funct = bancoRegistrador.getIR();
                         funct = funct.substring(26, 32);
                     //    System.out.println("Funct é="+funct);
                         funct = retornaFunct(Integer.parseInt(funct, 2));
 
                         if(funct == "jr"){
-                            System.out.println("UAU JR FUNCIONANDO");
+     //                       System.out.println("UAU JR FUNCIONANDO");
                            clockExt.setCounter(13);
                         }else{
 
@@ -970,7 +1067,7 @@ public class PagInserirDados extends javax.swing.JFrame {
                                 ula.setOperacao(funct);
                                 ula.executarOperacao();
                                 bancoRegistrador.setRegSaidaUla(Integer.toString(ula.getSaida()));
-                                System.out.println("Resultado da operação de "+funct+"="+bancoRegistrador.getRegSaidaUla());    
+  //                              System.out.println("Resultado da operação de "+funct+"="+bancoRegistrador.getRegSaidaUla());    
                                 clockExt.contar();
                         }
                    //     System.out.println("PC="+Integer.parseInt(bancoRegistrador.getPC()));
@@ -982,24 +1079,47 @@ public class PagInserirDados extends javax.swing.JFrame {
                         conteudo = bancoRegistrador.getIR();
                         destino = conteudo.substring(16, 21);
                         
-                  //      System.out.println("O reg de destino é"+Integer.parseInt(destino, 2));
+               //         System.out.println("O reg de destino é"+Integer.parseInt(destino, 2));
                         bancoRegistrador.setBancoRegistradores(Integer.parseInt(destino, 2), bancoRegistrador.getRegSaidaUla());//salvei no reg destino
                         clockExt.setCounter(0);
                  //       System.out.println("PC="+Integer.parseInt(bancoRegistrador.getPC()));
                 clockTotal.contar();
                         break;
 
-                    case 8:
+                    case 8://instrucao de desvio --- beq
 
+                           //zera todo mundo
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(false);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        //seções acessadas nesse caso
+                        radioPC.setSelected(true);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(true);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(true);
+                        
+                        
+                        
                         constante = bancoRegistrador.getRegSaidaUla();
-
+            //            System.out.println("Valor da constante ="+constante);
                         ula.setValorA(Integer.parseInt(bancoRegistrador.getRegA()));
+            //            System.out.println("Valor a="+ula.getValorB());
                         ula.setValorB(Integer.parseInt(bancoRegistrador.getRegB()));
+            //            System.out.println("Valor b="+ula.getValorB());
                         ula.setOperacao("beq");
                         ula.executarOperacao();
-                         resultado = ula.getSaida();
+                        resultado = ula.getSaida();
 
                             if(resultado == 1){
+         //                       System.out.println("Igual");
                                 bancoRegistrador.setPC(constante);
                             }else{
                                 ula.setValorA(Integer.parseInt(bancoRegistrador.getPC()));
@@ -1016,6 +1136,25 @@ public class PagInserirDados extends javax.swing.JFrame {
 
                     case 9://jump, jal
 
+                            //zera todo mundo
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(false);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        //seções acessadas nesse caso
+                        radioPC.setSelected(true);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(true);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(true);
+                        
+                        
 
                         conteudo = bancoRegistrador.getIR();
                         conteudo = conteudo.substring(6, 32);
@@ -1035,11 +1174,32 @@ public class PagInserirDados extends javax.swing.JFrame {
                         break;
 
                     case 10: //bne
+                        
+                            //zera todo mundo
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(false);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        //seções acessadas nesse caso
+                        radioPC.setSelected(true);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(true);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(true);
+                        
+                        
+                        
                         constante = bancoRegistrador.getRegSaidaUla();
 
                         ula.setValorA(Integer.parseInt(bancoRegistrador.getRegA()));
                         ula.setValorB(Integer.parseInt(bancoRegistrador.getRegB()));
-                        ula.setOperacao("beq");
+                        ula.setOperacao("bne");
                         ula.executarOperacao();
                         resultado = ula.getSaida();
 
@@ -1061,6 +1221,26 @@ public class PagInserirDados extends javax.swing.JFrame {
 
                     case 11: //andi
 
+                            //zera todo mundo
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(false);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        //seções acessadas nesse caso
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(true);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(true);
+                        
+                        
+                        
                           conteudo = bancoRegistrador.getIR();
 
                           constante = conteudo.substring(16,32);
@@ -1083,12 +1263,32 @@ public class PagInserirDados extends javax.swing.JFrame {
 
                      case 12: //ori
 
+                         
+                              //zera todo mundo
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(false);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        //seções acessadas nesse caso
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(true);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(true);
+                        
+                         
                           conteudo = bancoRegistrador.getIR();
 
                           constante = conteudo.substring(16,32);
 
 
-                          ula.setValorA(Integer.parseInt(constante));
+                          ula.setValorA(Integer.parseInt(constante, 2));
                           ula.setValorB(Integer.parseInt(bancoRegistrador.getRegB()));
                           ula.setOperacao("ori");
                           ula.executarOperacao();
@@ -1105,29 +1305,194 @@ public class PagInserirDados extends javax.swing.JFrame {
                 clockTotal.contar();
                     break;
 
-                     case 13:
+                     case 13://concluir a execução do registrador de retorno RA
+                         
+                              //zera todo mundo
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(false);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        //seções acessadas nesse caso
+                        radioPC.setSelected(true);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(false);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                         
                         bancoRegistrador.setPC(bancoRegistrador.getBancoRegistradores(31));
                         clockExt.setCounter(0);
                //         System.out.println("PC="+Integer.parseInt(bancoRegistrador.getPC()));
                          break;
 
+                    case 14://addi
+                    
+                             //zera todo mundo
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(false);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        //seções acessadas nesse caso
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(true);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(true);
+                        
+                        
+                        
+                        conteudo = bancoRegistrador.getIR();
+                        
+                        constante = conteudo.substring(16,32);
+                        
+                        registradorDestino = conteudo.substring(6, 11);
+                        
+                        ula.setValorA(Integer.parseInt(constante, 2));
+                        ula.setValorB(Integer.parseInt(bancoRegistrador.getRegB()));
+                        ula.setOperacao("addi");
+                        ula.executarOperacao();
+                                                
+                        
+                        bancoRegistrador.setRegSaidaUla(Integer.toString(ula.getSaida()));
+                        
+                        bancoRegistrador.setBancoRegistradores(Integer.parseInt(registradorDestino, 2), bancoRegistrador.getRegSaidaUla());
+                        clockExt.setCounter(0);
+                  //      System.out.println("PC="+Integer.parseInt(bancoRegistrador.getPC()));
+                        clockTotal.contar();
+                        
+                        break;
+                         
+                    case 15://lui 
+                        
+                             //zera todo mundo
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(false);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        //seções acessadas nesse caso
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(true);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        
+                        conteudo = bancoRegistrador.getIR();
+                   
+                        constante = conteudo.substring(16, 32);
+                        
+                        int num = conversorBinarioDecimal(constante);
+                       
+                        constante = Integer.toString(num);
+                        
+                        bancoRegistrador.setMDR(constante);
+                        
+                        registradorDestino = conteudo.substring(11, 16);
+                        bancoRegistrador.setBancoRegistradores(Integer.parseInt(registradorDestino, 2), bancoRegistrador.getMDR());
+                        clockExt.setCounter(0);
+                  //      System.out.println("PC="+Integer.parseInt(bancoRegistrador.getPC()));
+                        clockTotal.contar();
+                        break;
+                        
+                    case 16://slti
+                        
+                            //zera todo mundo
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(false);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        //seções acessadas nesse caso
+                        radioPC.setSelected(true);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(true);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(true);
+                        
+                        
+                        
+                        constante = bancoRegistrador.getRegSaidaUla();
+                  //      System.out.println("A constante do slti é="+constante);
+                        
+                        ula.setValorA(Integer.parseInt(bancoRegistrador.getRegA()));
+                        ula.setValorB(Integer.parseInt(constante));
+                        ula.setOperacao("slti");
+                        ula.executarOperacao();
+                        
+                        bancoRegistrador.setRegSaidaUla(Integer.toString(ula.getSaida()));
+                        
+                //        System.out.println("Registrador saida da ula="+bancoRegistrador.getRegSaidaUla());
+                        
+                        conteudo = bancoRegistrador.getIR();
+                        
+                        destino = conteudo.substring(6, 11);
+                        
+                        System.out.println("O reg de destino é"+Integer.parseInt(destino, 2));
+                        bancoRegistrador.setBancoRegistradores(Integer.parseInt(destino, 2), bancoRegistrador.getRegSaidaUla());//salvei no reg destino
+                        clockExt.setCounter(0);
+
+               //         System.out.println("PC="+Integer.parseInt(bancoRegistrador.getPC()));
+                        clockTotal.contar();
+                        
+                        break;
+                        
+                }
+                
+                if(estado == -1){
+                  JOptionPane.showMessageDialog(null, "Execução completa!");
                 }
              
+      }else{
+            JOptionPane.showMessageDialog(null, "Inicialize as caches!");
       }
        // System.out.println("Valor do contador="+clockExt.getCounter());
     }//GEN-LAST:event_btnExecucaoPassoActionPerformed
 
     private void btnExecucaoCompletaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExecucaoCompletaActionPerformed
 
-        int condicao = 1;
+        int condicao = 0;
         int cont = 0;
         
+        if(coloqueiValores == 0){
+            JOptionPane.showMessageDialog(null, "Inicialize as caches!");
+            condicao = 0;
+        }else{
+            condicao = 1;
+        }
+        
         while(condicao == 1){
+         if(coloqueiValores == 1){
+            
+               
                 //qual estado da máquina de estados eu to com esse clock?
+                radioCONTROLE.setSelected(true);
                 int estado = controle.indicaSinais(clockExt.getCounter());//estado 0 tenho q ler determinados sinais
                 txtClock.setText(Integer.toString(clockTotal.getCounter()));
                 txtValordoPc.setText(bancoRegistrador.getPC());
-                
+             //   System.out.println("Valor do clock da maquina d estados="+clockTotal.getCounter());
                 
                 int instrucao =0;
                 String conteudo;
@@ -1139,73 +1504,146 @@ public class PagInserirDados extends javax.swing.JFrame {
                 String constante;
                 String destino;
                 palavra p;
+                int ocorreuFalha = 0;
+                String registradorDestino;
+                String transformado;
+                        
                 
-              
+                //System.out.println("Ultima instrucao = "+ultimaInstInserida);
+    
+                if(ultimaInstInserida+4 <= Integer.parseInt(bancoRegistrador.getPC())){
+                    estado = -1;
+                    condicao = 0;
+                }
+                
                 switch(estado){
 
-                    case 0:
+                    case 0: //INCREMENTO O PC AQUI
+                        
+                        //zera todo mundo
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(false);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        //seções acessadas nesse caso
+                        radioPC.setSelected(true);
+                        radioCACHEINSTRUCOES.setSelected(true);
+                        radioBREGISTRADORES.setSelected(true);
+                        radioULA.setSelected(true);
+                        
+                        p = cacheInstruction.encontrarElemento(Integer.parseInt(bancoRegistrador.getPC()));
                         
                         
-                        p = memoria.procurar(Integer.parseInt(bancoRegistrador.getPC()));
-                
-                
                         if(p.endereco==0 && p.getConteudo()=="0"){
-                            System.out.println("Execução completa");
-                            estado = -1;
-                            condicao = 0;
-                        }else{
-
-                       // String dadoLido = memoria.getMemoria(Integer.parseInt(bancoRegistrador.getPC()));
-                    //    p = memoria.procurar(Integer.parseInt(bancoRegistrador.getPC()));
+                        //   System.out.println("Cache miss no ciclo="+clockTotal.getCounter());
+                           falhas.add(clockTotal.getCounter());
+                           clockTotal.setCounter(clockTotal.getCounter()+50);
+                           cacheInstruction.inserir(Integer.parseInt(bancoRegistrador.getPC()), memoria);
+                           radioMP.setSelected(true);
+                           p = cacheInstruction.encontrarElemento(Integer.parseInt(bancoRegistrador.getPC()));
+                        }
+                        
+                        
                         String dadoLido = p.getConteudo();
-                     //   String dadoLido="00001010010100111000100000100000";
-                 //       System.out.println("Li a memoria="+dadoLido);
-                   // IMPORTANTE //     int valor =Integer.parseInt(dadoLido, 2) ;
-                    //    String a = dadoLido.substring(0,6);//pego o opcode da string
-                     //   System.out.println("valor de a="+a);
-
+                
                         bancoRegistrador.setIR(dadoLido); //liga memoria, reg inst
+                        
+                    //    System.out.println("Lido="+bancoRegistrador.getIR());
+                        
                         ula.setValorA(Integer.parseInt(bancoRegistrador.getPC()));
+                     //   System.out.println("-ESTADO0- ULA VALOR A="+ula.getValorA());
                         ula.setValorB(4);
+             //         System.out.println("-ESTADO0- ULA VALOR B="+ula.getValorB());
                         ula.setOperacao("add"); 
                         ula.executarOperacao();//liga ula
                         bancoRegistrador.setPC(Integer.toString(ula.getSaida())); //liga pc
-                        System.out.println("Meu pc é="+bancoRegistrador.getPC());
-        //                System.out.println("Assim ficou após executar uma BUSCA de instrução na memória");
-        //                System.out.println("IR="+bancoRegistrador.getIR());
-        //                System.out.println("ULA FONTE A="+ula.getValorA());
-        //                System.out.println("ULA FONTE B="+ula.getValorB());
-        //                System.out.println("ULA SAIDA="+ula.getSaida());
-        //                System.out.println("PC ATUALIZADO="+bancoRegistrador.getPC());
                         clockExt.contar();
-                        }
+               //         System.out.println("PC EM ESTADO 0="+Integer.parseInt(bancoRegistrador.getPC()));
+                        clockTotal.contar();
                         break;
 
-                    case 1:
+                    case 1://decodificação 
+                        
+                         //zera todo mundo
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(false);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        //seções acessadas nesse caso
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(true);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(true);
+                        radioULA.setSelected(true);
+                        
+                        
                          conteudo = bancoRegistrador.getIR();//retorna o conteudo do reg. instruções
                          operacao = conteudo.substring(0, 6);
-                        System.out.println("Operacao no case 1 é ="+operacao);
                          instrucao = Integer.parseInt(operacao, 2);
                          controle.setInstrucao(instrucao);//guardo instrução no controle
-                       //  clockExt.setCounter(instrucao);
-                        System.out.println("A instrucao e="+controle.getInstrucao());
-                         reg1 = conteudo.substring(6, 11);//String a = dadoLido.substring(0,6);//pego o opcode da string
-                         reg2 = conteudo.substring(11, 16);
-                         int r1 = Integer.parseInt(reg1, 2);
-                         int r2 = Integer.parseInt(reg2, 2);
-                     //    System.out.println("Valor do reg1="+r1+"; reg2="+r2);
+                //         System.out.println("A instrucao lida é="+controle.getInstrucao());
+                             if(instrucao == 43){//é um sw
+                            //     System.out.println("É UM SW");
+                                     reg1 = conteudo.substring(11, 16); //rt
+                                     reg2 = conteudo.substring(16, 32); //constante
+                                     int r1 = Integer.parseInt(reg1, 2);
+                                    // System.out.println("O reg1 é="+r1);
+                                     int r2 = Integer.parseInt(reg2, 2);
+                                  //   int r2 = Integer.parseInt(reg2, 2);
+                                    // System.out.println("O reg2 é="+r2);
+                                 //    System.out.println("Valor do reg1="+r1+"; reg2="+r2);
 
-                         bancoRegistrador.setRegA(bancoRegistrador.getBancoRegistradores(r1));
-                         bancoRegistrador.setRegB(bancoRegistrador.getBancoRegistradores(r2));
+                                     bancoRegistrador.setRegA(bancoRegistrador.getBancoRegistradores(r1));
+                                  //   System.out.println("Dentro da decodificacao, BANCO REG A="+bancoRegistrador.getRegA());
+                                   //  bancoRegistrador.setRegB(bancoRegistrador.getBancoRegistradores(r2));
+                                 //    System.out.println("Dentro da decodificacao, BANCO REG ="+bancoRegistrador.getRegB());
 
-                         estSignal = conteudo.substring(16,32);
+                                     ula.setValorA(Integer.parseInt(bancoRegistrador.getRegA()));
+                                     ula.setValorB(r2);
+                                     ula.setOperacao("add");
+                                     ula.executarOperacao();
+                                     bancoRegistrador.setRegSaidaUla(Integer.toString(ula.getSaida()));
+                                 //    System.out.println("Saida da ula="+bancoRegistrador.getRegSaidaUla());
+                                     String rB = conteudo.substring(0, 11);
+                                     int b = Integer.parseInt(rB, 2);
+                                 //    System.out.println("O destino="+b);
+                                    //  bancoRegistrador.setRegB(rB);
+                                   //  System.out.println("Valor a ser inserido caso de certo="+bancoRegistrador.getBancoRegistradores(Integer.parseInt(bancoRegistrador.getRegB())));
+                             }else{
+                                 reg1 = conteudo.substring(6, 11);
+                                 reg2 = conteudo.substring(11, 16);
+                                 int r1 = Integer.parseInt(reg1, 2);
+                              //   System.out.println("O reg1 é="+r1);
+                                 int r2 = Integer.parseInt(reg2, 2);
+                            //     System.out.println("O reg2 é="+r2);
+                             //    System.out.println("Valor do reg1="+r1+"; reg2="+r2);
 
-                         estSignal = extensaoSinalComDesloc(estSignal);
-                         ula.setValorA(Integer.parseInt(bancoRegistrador.getPC()));
-                         ula.setValorB(Integer.parseInt(estSignal, 2));
-                         ula.setOperacao("add");
-                         ula.executarOperacao();
-                         bancoRegistrador.setRegSaidaUla(Integer.toString(ula.getSaida()));
+                                 bancoRegistrador.setRegA(bancoRegistrador.getBancoRegistradores(r1));
+                   //              System.out.println("ESTADO 1, BANCO REG A="+bancoRegistrador.getRegA());
+                                 bancoRegistrador.setRegB(bancoRegistrador.getBancoRegistradores(r2));
+                  //               System.out.println("ESTADO 1, BANCO REG B="+bancoRegistrador.getRegA());
+                            //     System.out.println("Dentro da decodificacao, BANCO REG ="+bancoRegistrador.getRegB());
+
+                                 estSignal = conteudo.substring(16,32);
+                                 estSignal = extensaoSinalComDesloc(estSignal);
+                    //             System.out.println("Estendendo sinal fica="+Integer.parseInt(estSignal, 2));
+                                 ula.setValorA(Integer.parseInt(bancoRegistrador.getPC()));
+                                 ula.setValorB(Integer.parseInt(estSignal, 2));
+                                 ula.setOperacao("add");
+                                 ula.executarOperacao();
+                                 bancoRegistrador.setRegSaidaUla(Integer.toString(ula.getSaida()));
+                             }
+                         
 
                              if(instrucao == 0){//tipo r
                                  clockExt.setCounter(6);
@@ -1219,103 +1657,354 @@ public class PagInserirDados extends javax.swing.JFrame {
                              if(instrucao == 5){//bne
                                  clockExt.setCounter(10);
                              }
-                             if(instrucao == 35 || instrucao == 43){ //lw ou sw
+                             if(instrucao == 35 || instrucao == 43 || instrucao == 8 || instrucao == 13
+                                     || instrucao == 10 || instrucao == 12 || instrucao == 15){ //lw ou sw VOU ADICIONAR O ADDI QUE É IMEDIATO OK
+                                 //vou adicionar tambem os outros imediatos hehe ORI, SLTI, ANDI
                                  clockExt.contar();
                              }
-        //                int result = conversorDecimalBinario(ula.getSaida());
-        //                
-        //                System.out.println("Meu registrador A="+bancoRegistrador.getRegA());
-        //                System.out.println("Meu registrador B="+bancoRegistrador.getRegB());
-        //                System.out.println("A saída da ULA fica como="+result);
+            //            System.out.println("PC EM ESTADO 1="+Integer.parseInt(bancoRegistrador.getPC()));      
 
+                       // System.out.println("PC="+Integer.parseInt(bancoRegistrador.getPC()));
+                clockTotal.contar();
                         break;
-                    case 2:
-                        System.out.println("Valor do registrador a="+Integer.parseInt(bancoRegistrador.getRegA()));
+                    case 2://E DO TIPO IMEDIATO
+
+                            //zera todo mundo
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(false);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        //seções acessadas nesse caso
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(true);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(true);
+                        
+                        
+                        
                         ula.setValorA(Integer.parseInt(bancoRegistrador.getRegA()));
+                     //   System.out.println("RegA="+ula.getValorA());
                         conteudo = bancoRegistrador.getIR();
-                        constante = conteudo.substring(16,32);
+                        estSignal = conteudo.substring(16,32);
                       //  System.out.println("valor de estSignal="+estSignal);
-                        ula.setValorB(Integer.parseInt(constante, 2));
+                        ula.setValorB(Integer.parseInt(estSignal, 2));
+                   //     System.out.println("RegB="+ula.getValorB());
                         ula.setOperacao("add");
                         ula.executarOperacao();
                      //   System.out.println("Valor a="+ula.getValorA());
                       //  System.out.println("Valor b="+ula.getValorB());
                       //  System.out.println("Valor saída="+ula.getSaida());
                         bancoRegistrador.setRegSaidaUla(Integer.toString(ula.getSaida()));
-                        
 
+                      //  System.out.println("Registrador saida da ula é:"+bancoRegistrador.getRegSaidaUla());
                         //controle da operação para cuidar a máquina de estados
-                            if(controle.getInstrucao()==35){
+                            if(controle.getInstrucao()==35){ //lw
                                 clockExt.setCounter(3);//meu próximo estado
                             }
 
-                            if(controle.getInstrucao()==43){
+                            if(controle.getInstrucao()==43){//sw
+                       //         System.out.println("Vamos fazer um sw");
                                 clockExt.setCounter(5);//meu próximo estado
                             }
-
+                            
+                            if(controle.getInstrucao() == 8){//addi
+          //                      System.out.println("Foi para o estado da instrucao addi");
+                                clockExt.setCounter(14);
+                            }
+                            
+                            if(controle.getInstrucao() == 13){//ori
+                                clockExt.setCounter(12);
+                            }
+                            
+                            if(controle.getInstrucao() == 10){//slti
+                    //            System.out.println("Instrução do tipo slti");
+                                clockExt.setCounter(16);
+                            }
+                            
+                            if(controle.getInstrucao() == 12){//andi
+                                clockExt.setCounter(11);
+                            }
+                            
+                            if(controle.getInstrucao() == 15){
+           //                     System.out.println("OPA LUI FUNCIONANDO AQUI");
+                                clockExt.setCounter(15);
+                            }
+                            
+                            
+                            /*instrucao == 8 ADDI || instrucao == 13 ORI
+                                     || instrucao == 10 SLTI || instrucao == 12 ANDI*/
+        //                System.out.println("PC EM ESTADO 2="+Integer.parseInt(bancoRegistrador.getPC()));      
+                            
+                      //  System.out.println("A instrucao é="+controle.getInstrucao());
+                   //     System.out.println("PC="+Integer.parseInt(bancoRegistrador.getPC()));
+                clockTotal.contar();
                         break;
 
                     case 3://estou fazendo um lw
-                     //   System.out.println("Valor do reg saida da ula="+Integer.parseInt(bancoRegistrador.getRegSaidaUla()));
-                        palavra auxiliar = memoria.procurar(Integer.parseInt(bancoRegistrador.getRegSaidaUla())) ;
-                        conteudo = auxiliar.getConteudo();
-                        bancoRegistrador.setMDR(conteudo);
-                     //   System.out.println("Minha memória de dados é="+bancoRegistrador.getMDR());
-                        clockExt.contar();
-                        break;
-                    case 4:
+                        
+                            //zera todo mundo
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(false);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        //seções acessadas nesse caso
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(true);
+                        radioCACHEDADOS.setSelected(true);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        
+                        
                         conteudo = bancoRegistrador.getIR();
-                        String registradorDestino = conteudo.substring(6, 11);
+                        
+                        registradorDestino = conteudo.substring(11, 16); //ta com problema para ver o sp
+                  //      System.out.println("Aqui é="+Integer.parseInt(registradorDestino, 2));
+                        
+                        
+                        if(Integer.parseInt(registradorDestino, 2) == 29){  //lw s0 0 sp carrego para s0 o que esta contido em sp na posicao 0
+                            //tenho que tratar diferente né 
+                   
+                            //System.out.println("Oi, acho que é o STACK POINTER AAAAAAAAAAAAAA");
+                            //bancoRegistrador.sp.push("ANDRELISEEE",0);
+                            //bancoRegistrador.sp.push("ANDRELISEEE",4);
+                            //System.out.println("Vai tirar a posicao="+Integer.parseInt(bancoRegistrador.getRegSaidaUla()));
+                            conteudo = bancoRegistrador.sp.pop(Integer.parseInt(bancoRegistrador.getRegSaidaUla())); //ta tirando do topo da pilha
+                          //  System.out.println("Tirei o ="+conteudo);
+                            bancoRegistrador.setMDR(conteudo);
+                            clockExt.contar();
+                           // bancoRegistrador.sp.verPilha();
+                            
+                        }else{
+                            palavra auxiliar = cacheDate.encontrarElemento(Integer.parseInt(bancoRegistrador.getRegSaidaUla()));
+                   
+                            if(auxiliar.getConteudo()=="0" && auxiliar.getEndereco()==0){
+                                falhas.add(clockTotal.getCounter());
+                                clockTotal.setCounter(clockTotal.getCounter()+50);
+                       //         System.out.println("Para carregar da memoria, o endereço é="+Integer.parseInt(bancoRegistrador.getRegSaidaUla()));
+                                cacheDate.inserir(Integer.parseInt(bancoRegistrador.getRegSaidaUla()), memoria);
+                                auxiliar = cacheDate.encontrarElemento(Integer.parseInt(bancoRegistrador.getRegSaidaUla())); 
+                            }
+                             //   System.out.println("CONTEUDO DA CACHE DE DADOS="+auxiliar.getConteudo()+"e endereço="+auxiliar.getEndereco());
+                                    conteudo = auxiliar.getConteudo();
+                                    bancoRegistrador.setMDR(conteudo);
+                                 //   System.out.println("Minha memória de dados é="+bancoRegistrador.getMDR());
+
+                         clockExt.contar();
+                        }
+                        
+                        
+                 //       System.out.println("PC="+Integer.parseInt(bancoRegistrador.getPC()));
+                clockTotal.contar();
+                        break;
+                    
+                    
+                    case 4://faz parte do load
+                        
+                            //zera todo mundo
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(false);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        //seções acessadas nesse caso
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(true);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        
+                        
+                        conteudo = bancoRegistrador.getIR();
+                        registradorDestino = conteudo.substring(6, 11);
+            //            System.out.println("O reg de destino e="+Integer.parseInt(registradorDestino, 2));
                         bancoRegistrador.setBancoRegistradores(Integer.parseInt(registradorDestino, 2), bancoRegistrador.getMDR());
+                   //     System.out.println("Guardando no registrador="+Integer.parseInt(registradorDestino, 2)+"O conteudode="+bancoRegistrador.getMDR());
                         clockExt.setCounter(0);
+                  //      System.out.println("PC="+Integer.parseInt(bancoRegistrador.getPC()));
+                clockTotal.contar();
                         break;
+                        
+                        
                     case 5://estou fazendo um sw
-                        System.out.println("Vamos ver :ENDERECO="+bancoRegistrador.getRegSaidaUla()+"CONTEUDO"+Integer.parseInt(bancoRegistrador.getRegB()));
-                        memoria.inserir(Integer.parseInt(bancoRegistrador.getRegSaidaUla()), bancoRegistrador.getRegB());
+                        
+                        //endereço, conteudo
+                        
+                            //zera todo mundo
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(false);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        //seções acessadas nesse caso
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(true);
+                        radioCACHEDADOS.setSelected(true);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        
+                        
+                        conteudo = bancoRegistrador.getIR(); //conteudo, endereco
+                        
+                        registradorDestino = conteudo.substring(11, 16); //ta com problema para ver o sp
+                 //       System.out.println("Aqui é="+Integer.parseInt(registradorDestino, 2));
+                        
+                        if(Integer.parseInt(registradorDestino, 2) == 29){  
+                            
+                        //    bancoRegistrador.sp.verPilha();
+                            
+                            destino = conteudo.substring(6, 11);
+
+                            bancoRegistrador.sp.push(bancoRegistrador.getBancoRegistradores(Integer.parseInt(destino, 2)), Integer.parseInt(bancoRegistrador.getRegSaidaUla()));
+                            
+                            
+                            
+                        }else{
+                            destino = conteudo.substring(6, 11);
+                        
+                      //  System.out.println("Vou guardar no endereço "+Integer.parseInt(bancoRegistrador.getRegSaidaUla())+", o seguinte conteudo="+bancoRegistrador.getBancoRegistradores(Integer.parseInt(destino, 2)));
+                        
+                        ocorreuFalha = cacheDate.escrever(Integer.parseInt(bancoRegistrador.getRegSaidaUla()), bancoRegistrador.getBancoRegistradores(Integer.parseInt(destino, 2)), memoria);
+                        //memoria.inserir();
+                            if(ocorreuFalha == 0){
+                             //   System.out.println("Não");
+                            }else{ //bloco não tava mais teve q carregr ele para a memória
+                                falhas.add(clockTotal.getCounter());
+                                clockTotal.setCounter(clockTotal.getCounter()+50);
+                             //   System.out.println("Sim");
+                            }
+                        
+                    //    System.out.println("PC="+Integer.parseInt(bancoRegistrador.getPC()));
+                        }
+                        
+                        
+                        zerarReg();
+                        
                         clockExt.setCounter(0);
+                        
+                        clockTotal.contar();
+                        
                         break;
-                    case 6:
+                        
+                        
+                    case 6://tiro r
+                        
+                           //zera todo mundo
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(false);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        //seções acessadas nesse caso
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(true);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(true);
+                        
+                        
+                        
                         ula.setValorA(Integer.parseInt(bancoRegistrador.getRegA()));
-                     //   System.out.println("Valor de regA="+Integer.parseInt(bancoRegistrador.getRegA()));
+           //             System.out.println("ULA VALOR A="+ula.getValorA());
                         ula.setValorB(Integer.parseInt(bancoRegistrador.getRegB()));
-                      //  System.out.println("Valor de regB="+Integer.parseInt(bancoRegistrador.getRegB()));
+       //                 System.out.println("ULA VALOR B="+ula.getValorB());
                         String funct = bancoRegistrador.getIR();
                         funct = funct.substring(26, 32);
-                     //   System.out.println("Funct é="+funct);
+                    //    System.out.println("Funct é="+funct);
                         funct = retornaFunct(Integer.parseInt(funct, 2));
 
                         if(funct == "jr"){
+     //                       System.out.println("UAU JR FUNCIONANDO");
                            clockExt.setCounter(13);
                         }else{
 
-                              //  System.out.println("Valor de funct="+funct);
+                           //     System.out.println("Valor de funct="+funct);
                                 ula.setOperacao(funct);
                                 ula.executarOperacao();
-                              //  System.out.println("Resultadooooo="+ula.getSaida());
                                 bancoRegistrador.setRegSaidaUla(Integer.toString(ula.getSaida()));
-                            //    System.out.println("Resultado da operação de "+funct+"="+bancoRegistrador.getRegSaidaUla());
+  //                              System.out.println("Resultado da operação de "+funct+"="+bancoRegistrador.getRegSaidaUla());    
                                 clockExt.contar();
                         }
+                   //     System.out.println("PC="+Integer.parseInt(bancoRegistrador.getPC()));
+                clockTotal.contar();
                         break;
+                        
                     case 7:
+                        
                         conteudo = bancoRegistrador.getIR();
-                        conteudo = conteudo.substring(16, 21);
-                        bancoRegistrador.setBancoRegistradores(Integer.parseInt(conteudo, 2), bancoRegistrador.getRegSaidaUla());
+                        destino = conteudo.substring(16, 21);
+                        
+               //         System.out.println("O reg de destino é"+Integer.parseInt(destino, 2));
+                        bancoRegistrador.setBancoRegistradores(Integer.parseInt(destino, 2), bancoRegistrador.getRegSaidaUla());//salvei no reg destino
                         clockExt.setCounter(0);
-                        System.out.println("O pc está valendo isso aqui="+Integer.parseInt(bancoRegistrador.getPC()));
+                 //       System.out.println("PC="+Integer.parseInt(bancoRegistrador.getPC()));
+                clockTotal.contar();
                         break;
 
-                    case 8:
+                    case 8://instrucao de desvio --- beq
 
+                           //zera todo mundo
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(false);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        //seções acessadas nesse caso
+                        radioPC.setSelected(true);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(true);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(true);
+                        
+                        
+                        
                         constante = bancoRegistrador.getRegSaidaUla();
-
+            //            System.out.println("Valor da constante ="+constante);
                         ula.setValorA(Integer.parseInt(bancoRegistrador.getRegA()));
+            //            System.out.println("Valor a="+ula.getValorB());
                         ula.setValorB(Integer.parseInt(bancoRegistrador.getRegB()));
+            //            System.out.println("Valor b="+ula.getValorB());
                         ula.setOperacao("beq");
                         ula.executarOperacao();
-                         resultado = ula.getSaida();
+                        resultado = ula.getSaida();
 
                             if(resultado == 1){
+         //                       System.out.println("Igual");
                                 bancoRegistrador.setPC(constante);
                             }else{
                                 ula.setValorA(Integer.parseInt(bancoRegistrador.getPC()));
@@ -1326,14 +2015,35 @@ public class PagInserirDados extends javax.swing.JFrame {
                                 bancoRegistrador.setPC(bancoRegistrador.getRegSaidaUla());
                             }
                         clockExt.setCounter(0);
+                //        System.out.println("PC="+Integer.parseInt(bancoRegistrador.getPC()));
+                clockTotal.contar();
                         break;
 
                     case 9://jump, jal
 
+                            //zera todo mundo
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(false);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        //seções acessadas nesse caso
+                        radioPC.setSelected(true);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(true);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(true);
+                        
+                        
 
                         conteudo = bancoRegistrador.getIR();
                         conteudo = conteudo.substring(6, 32);
-                        System.out.println("Este é o meu endereço de desvio do jump="+Integer.parseInt(conteudo, 2));
+               //         System.out.println("Este é o meu endereço de desvio do jump="+Integer.parseInt(conteudo, 2));
 
                         ula.setValorA(Integer.parseInt(conteudo, 2));
                         ula.setValorB(Integer.parseInt(bancoRegistrador.getPC()));
@@ -1344,14 +2054,37 @@ public class PagInserirDados extends javax.swing.JFrame {
                         bancoRegistrador.setPC(bancoRegistrador.getRegSaidaUla());
                         clockExt.setCounter(0);
 
+                  //      System.out.println("PC="+Integer.parseInt(bancoRegistrador.getPC()));
+                clockTotal.contar();
                         break;
 
                     case 10: //bne
+                        
+                            //zera todo mundo
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(false);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        //seções acessadas nesse caso
+                        radioPC.setSelected(true);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(true);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(true);
+                        
+                        
+                        
                         constante = bancoRegistrador.getRegSaidaUla();
 
                         ula.setValorA(Integer.parseInt(bancoRegistrador.getRegA()));
                         ula.setValorB(Integer.parseInt(bancoRegistrador.getRegB()));
-                        ula.setOperacao("beq");
+                        ula.setOperacao("bne");
                         ula.executarOperacao();
                         resultado = ula.getSaida();
 
@@ -1367,10 +2100,32 @@ public class PagInserirDados extends javax.swing.JFrame {
                             }
                         clockExt.setCounter(0);
 
+               //         System.out.println("PC="+Integer.parseInt(bancoRegistrador.getPC()));
+                clockTotal.contar();
                         break;
 
                     case 11: //andi
 
+                            //zera todo mundo
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(false);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        //seções acessadas nesse caso
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(true);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(true);
+                        
+                        
+                        
                           conteudo = bancoRegistrador.getIR();
 
                           constante = conteudo.substring(16,32);
@@ -1387,16 +2142,38 @@ public class PagInserirDados extends javax.swing.JFrame {
                           bancoRegistrador.setBancoRegistradores(Integer.parseInt(destino, 2), bancoRegistrador.getRegSaidaUla());
                           clockExt.setCounter(0);
 
+             //           System.out.println("PC="+Integer.parseInt(bancoRegistrador.getPC()));
+                clockTotal.contar();
                     break;
 
                      case 12: //ori
 
+                         
+                              //zera todo mundo
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(false);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        //seções acessadas nesse caso
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(true);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(true);
+                        
+                         
                           conteudo = bancoRegistrador.getIR();
 
                           constante = conteudo.substring(16,32);
 
 
-                          ula.setValorA(Integer.parseInt(constante));
+                          ula.setValorA(Integer.parseInt(constante, 2));
                           ula.setValorB(Integer.parseInt(bancoRegistrador.getRegB()));
                           ula.setOperacao("ori");
                           ula.executarOperacao();
@@ -1409,16 +2186,177 @@ public class PagInserirDados extends javax.swing.JFrame {
                           bancoRegistrador.setBancoRegistradores(Integer.parseInt(destino, 2), bancoRegistrador.getRegSaidaUla());
                           clockExt.setCounter(0);
 
+//                        System.out.println("PC="+Integer.parseInt(bancoRegistrador.getPC()));
+                clockTotal.contar();
                     break;
 
-                     case 13:
+                     case 13://concluir a execução do registrador de retorno RA
+                         
+                              //zera todo mundo
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(false);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        //seções acessadas nesse caso
+                        radioPC.setSelected(true);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(false);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                         
                         bancoRegistrador.setPC(bancoRegistrador.getBancoRegistradores(31));
                         clockExt.setCounter(0);
+               //         System.out.println("PC="+Integer.parseInt(bancoRegistrador.getPC()));
                          break;
 
+                    case 14://addi
+                    
+                             //zera todo mundo
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(false);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        //seções acessadas nesse caso
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(true);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(true);
+                        
+                        
+                        
+                        conteudo = bancoRegistrador.getIR();
+                        
+                        constante = conteudo.substring(16,32);
+                        
+                        registradorDestino = conteudo.substring(6, 11);
+                        
+                        ula.setValorA(Integer.parseInt(constante, 2));
+                        ula.setValorB(Integer.parseInt(bancoRegistrador.getRegB()));
+                        ula.setOperacao("addi");
+                        ula.executarOperacao();
+                                                
+                        
+                        bancoRegistrador.setRegSaidaUla(Integer.toString(ula.getSaida()));
+                        
+                        bancoRegistrador.setBancoRegistradores(Integer.parseInt(registradorDestino, 2), bancoRegistrador.getRegSaidaUla());
+                        clockExt.setCounter(0);
+                  //      System.out.println("PC="+Integer.parseInt(bancoRegistrador.getPC()));
+                        clockTotal.contar();
+                        
+                        break;
+                         
+                    case 15://lui 
+                        
+                             //zera todo mundo
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(false);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        //seções acessadas nesse caso
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(true);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        
+                        conteudo = bancoRegistrador.getIR();
+                   
+                        constante = conteudo.substring(16, 32);
+                        
+                        int num = conversorBinarioDecimal(constante);
+                       
+                        constante = Integer.toString(num);
+                        
+                        bancoRegistrador.setMDR(constante);
+                        
+                        registradorDestino = conteudo.substring(11, 16);
+                        bancoRegistrador.setBancoRegistradores(Integer.parseInt(registradorDestino, 2), bancoRegistrador.getMDR());
+                        clockExt.setCounter(0);
+                  //      System.out.println("PC="+Integer.parseInt(bancoRegistrador.getPC()));
+                        clockTotal.contar();
+                        break;
+                        
+                    case 16://slti
+                        
+                            //zera todo mundo
+                        radioPC.setSelected(false);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(false);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(false);
+                        
+                        //seções acessadas nesse caso
+                        radioPC.setSelected(true);
+                        radioCACHEINSTRUCOES.setSelected(false);
+                        radioMP.setSelected(false);
+                        radioBREGISTRADORES.setSelected(true);
+                        radioCACHEDADOS.setSelected(false);
+                        radioCONTROLE.setSelected(false);
+                        radioULA.setSelected(true);
+                        
+                        
+                        
+                        constante = bancoRegistrador.getRegSaidaUla();
+                  //      System.out.println("A constante do slti é="+constante);
+                        
+                        ula.setValorA(Integer.parseInt(bancoRegistrador.getRegA()));
+                        ula.setValorB(Integer.parseInt(constante));
+                        ula.setOperacao("slti");
+                        ula.executarOperacao();
+                        
+                        bancoRegistrador.setRegSaidaUla(Integer.toString(ula.getSaida()));
+                        
+                //        System.out.println("Registrador saida da ula="+bancoRegistrador.getRegSaidaUla());
+                        
+                        conteudo = bancoRegistrador.getIR();
+                        
+                        destino = conteudo.substring(6, 11);
+                        
+                        System.out.println("O reg de destino é"+Integer.parseInt(destino, 2));
+                        bancoRegistrador.setBancoRegistradores(Integer.parseInt(destino, 2), bancoRegistrador.getRegSaidaUla());//salvei no reg destino
+                        clockExt.setCounter(0);
+
+               //         System.out.println("PC="+Integer.parseInt(bancoRegistrador.getPC()));
+                        clockTotal.contar();
+                        
+                        break;
+                        
                 }
-                clockTotal.contar();
+                
+                
+      }         
+            
         }
+        
+        if(condicao == 0){
+                  JOptionPane.showMessageDialog(null, "Execução completa!");
+                }
+        
+       
+        
     }//GEN-LAST:event_btnExecucaoCompletaActionPerformed
 
     private void btnCacheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCacheActionPerformed
@@ -1426,9 +2364,15 @@ public class PagInserirDados extends javax.swing.JFrame {
         cacheInstruction = new cacheInstrucao(Integer.parseInt(txtTamCache.getText()),Integer.parseInt(txtAssociatividade.getText()) );
         cacheDate = new cacheDados(Integer.parseInt(txtTamCache.getText()),Integer.parseInt(txtAssociatividade.getText()) );
         coloqueiValores = 1;
+        txtTamCache.setText("");
+        txtAssociatividade.setText("");
+        JOptionPane.showMessageDialog(null, "Caches de dados e instruções, criadas! Pronto para executar");
     }//GEN-LAST:event_btnCacheActionPerformed
 
     private void btnImprimeCachesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimeCachesActionPerformed
+        
+         
+
                 System.out.println("------------------------------------------------------------------");
                 System.out.println("INSTRUÇÕES");
                 cacheInstruction.imprimir();
@@ -1438,12 +2382,23 @@ public class PagInserirDados extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_btnImprimeCachesActionPerformed
+
+    private void btnFalhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFalhaActionPerformed
+
+        int x = falhas.size();
+        System.out.println("Falhas nos seguintes ciclos:");
+        for(int i = 0; i<x; i++){
+            Integer f=falhas.get(i);
+            System.out.println("Falha no ciclo="+f);
+        }
+        System.out.println("--------------------");
+    }//GEN-LAST:event_btnFalhaActionPerformed
     
    public static String extensaoSinalComDesloc(String numero){
         
         String extend=numero.substring(2, 16);
        // System.out.println("Valor de cort="+extend);
-        extend = extend + ""+ "00";
+        extend = "00"+""+extend ;
        // System.out.println("Fica como ="+extend);
        return extend;
    }
@@ -1481,11 +2436,14 @@ public class PagInserirDados extends javax.swing.JFrame {
            case 8:
                valor = "jr";
                break;               
+           case 18:
+               valor = "mult";
+               break;
        }
        return valor;
    }
     
-   public static int conversorDecimalBinario(int n){//estava estourando se fosse do tipo int 
+   public static int conversorDecimalBinario(int n){
         //INSTRUÇÃO DO TIPO R - OP|RS|RT|RD|SHAMT|FUNCT
         //INSTRUÇÃO DO TIPO I - OP|RS|RT|CONSTANTE OU ENDEREÇO
         //INSTRUÇÃO DO TIPO J - OP|CONSTANTE OU ENDEREÇO
@@ -1541,6 +2499,12 @@ public class PagInserirDados extends javax.swing.JFrame {
         String funct;
         String inst = "";
         int zero = 0;
+        
+        /*load word (lw), store word (sw), branch equal (beq), branch not equal (bne), add, addi (immediate),
+        sub, and, or, ori (immediate), nor, set on less than (slt), set on less than (slti) (immediate), 
+        jump (j), jump register (jr), shif left (sll),
+         shift right (sll), jump and link (jal), load upper immediate (lui).*/
+       
         
         if(tamanho == 4 ){//ou é uma instrução do tipo I ou do tipo R
                 
@@ -1705,6 +2669,87 @@ public class PagInserirDados extends javax.swing.JFrame {
                          inst = op +""+rs+""+rt+""+constante;
                         // System.out.println(inst);
                      break;  
+                     
+                    case "addi":
+                        op = Integer.toString(conversorDecimalBinario(8));
+                            if(op.length() < 6){
+                                int sub = 6 - op.length();
+                                for(int i = 0; i< sub;i++){
+                                    op = zero + "" +op;//inserindo zeros na frente para completar os 16 bits
+                                }
+                            }
+
+                         rs = Integer.toString(conversorDecimalBinario(retornaReg(arrayValores[1])));
+                            //System.out.println("Antes"+aux);
+                            if(rs.length() < 5){
+                                int sub = 5 - rs.length();
+                                for(int i = 0; i< sub;i++){
+                                    rs = zero + "" +rs;//inserindo zeros na frente para completar os 16 bits
+                                }
+                            }
+                            //System.out.println("DPs"+aux);
+
+                         constante = Integer.toString(conversorDecimalBinario(Integer.parseInt(arrayValores[3])));
+                          //  System.out.println("Antes"+aux);
+                            if(constante.length() < 16){
+                                int sub = 16 - constante.length();
+                                for(int i = 0; i< sub;i++){
+                                    constante = zero + "" + constante;//inserindo zeros na frente para completar os 16 bits
+                                }
+                            }
+
+                         rt = Integer.toString(conversorDecimalBinario(retornaReg(arrayValores[2])));
+                            if(rt.length() < 5){
+                                int sub = 5 - rt.length();
+                                for(int i = 0; i< sub;i++){
+                                    rt = zero + "" +rt;//inserindo zeros na frente para completar os 16 bits
+                                }
+                            }
+
+                         inst = op +""+rs+""+rt+""+constante;
+                        // System.out.println(inst);
+                     break;  
+                     
+                     case "slti":
+                        op = Integer.toString(conversorDecimalBinario(10));
+                            if(op.length() < 6){
+                                int sub = 6 - op.length();
+                                for(int i = 0; i< sub;i++){
+                                    op = zero + "" +op;//inserindo zeros na frente para completar os 16 bits
+                                }
+                            }
+
+                         rs = Integer.toString(conversorDecimalBinario(retornaReg(arrayValores[1])));
+                            //System.out.println("Antes"+aux);
+                            if(rs.length() < 5){
+                                int sub = 5 - rs.length();
+                                for(int i = 0; i< sub;i++){
+                                    rs = zero + "" +rs;//inserindo zeros na frente para completar os 16 bits
+                                }
+                            }
+                            //System.out.println("DPs"+aux);
+
+                         constante = Integer.toString(conversorDecimalBinario(Integer.parseInt(arrayValores[3])));
+                          //  System.out.println("Antes"+aux);
+                            if(constante.length() < 16){
+                                int sub = 16 - constante.length();
+                                for(int i = 0; i< sub;i++){
+                                    constante = zero + "" + constante;//inserindo zeros na frente para completar os 16 bits
+                                }
+                            }
+
+                         rt = Integer.toString(conversorDecimalBinario(retornaReg(arrayValores[2])));
+                            if(rt.length() < 5){
+                                int sub = 5 - rt.length();
+                                for(int i = 0; i< sub;i++){
+                                    rt = zero + "" +rt;//inserindo zeros na frente para completar os 16 bits
+                                }
+                            }
+
+                         inst = op +""+rs+""+rt+""+constante;
+                        // System.out.println(inst);
+                     break;  
+                    
                     case "beq":
                         op = Integer.toString(conversorDecimalBinario(4));
                             if(op.length() < 6){
@@ -1840,7 +2885,62 @@ public class PagInserirDados extends javax.swing.JFrame {
                         inst = op +""+rs+""+rt+""+rd+""+shamt+""+funct;
                         //System.out.println(inst);    
                     break;
+                    
+                     case "mult"://rt = Integer.toString(conversorDecimalBinario(retornaReg(arrayValores[2])));
+                          op = Integer.toString(conversorDecimalBinario(0));
+                            if(op.length() < 6){
+                              int sub = 6 - op.length();
+                                for(int i = 0; i< sub;i++){
+                                op = zero + "" +op;//inserindo zeros na frente para completar os 16 bits
+                              }
+                            } 
                         
+                         rd = Integer.toString(conversorDecimalBinario(retornaReg(arrayValores[1])));
+                            //System.out.println("Antes"+aux);
+                            if(rd.length() < 5){
+                                int sub = 5 - rd.length();
+                                for(int i = 0; i< sub;i++){
+                                    rd = zero + "" +rd;//inserindo zeros na frente para completar os 16 bits
+                                }
+                            }   
+                            
+                         rs = Integer.toString(conversorDecimalBinario(retornaReg(arrayValores[2])));
+                            //System.out.println("Antes"+aux);
+                            if(rs.length() < 5){
+                                int sub = 5 - rs.length();
+                                for(int i = 0; i< sub;i++){
+                                    rs = zero + "" +rs;//inserindo zeros na frente para completar os 16 bits
+                                }
+                            }
+                        
+                         rt = Integer.toString(conversorDecimalBinario(retornaReg(arrayValores[3])));
+                            if(rt.length() < 5){
+                                int sub = 5 - rt.length();
+                                for(int i = 0; i< sub;i++){
+                                    rt = zero + "" +rt;//inserindo zeros na frente para completar os 16 bits
+                                }
+                            }
+                         
+                         shamt = Integer.toString(conversorDecimalBinario(0));
+                            if(shamt.length() < 5){
+                              int sub = 5 - shamt.length();
+                                for(int i = 0; i< sub;i++){
+                                shamt = zero + "" +shamt;//inserindo zeros na frente para completar os 16 bits
+                              }
+                            } 
+                            
+                         funct = Integer.toString(conversorDecimalBinario(18));
+                            if(funct.length() < 6){
+                              int sub = 6 - funct.length();
+                                for(int i = 0; i< sub;i++){
+                                funct = zero + "" +funct;//inserindo zeros na frente para completar os 16 bits
+                              }
+                            } 
+                        inst = op +""+rs+""+rt+""+rd+""+shamt+""+funct;
+                        //System.out.println(inst);    
+                    break;
+                    
+                    
                     case "sub":
                           op = Integer.toString(conversorDecimalBinario(0));
                             if(op.length() < 6){
@@ -2222,11 +3322,54 @@ public class PagInserirDados extends javax.swing.JFrame {
                     //ATE AQUI DO TIPO R - falta jr que fica com o de 2 campos>>>                                                                                                                                                                
                 }
         }
+        
+        if(tamanho == 3){//uma instrução muito especial :) LUI
+            
+                    op = Integer.toString(conversorDecimalBinario(15));
+                        if(op.length() < 6){
+                            int sub = 6 - op.length();
+                            for(int i = 0; i< sub;i++){
+                                op = zero + "" +op;//inserindo zeros na frente para completar os 16 bits
+                            }
+                        }
+
+                     rs = "0";
+                        //System.out.println("Antes"+aux);
+                        if(rs.length() < 5){
+                            int sub = 5 - rs.length();
+                            for(int i = 0; i< sub;i++){
+                                rs = zero + "" +rs;//inserindo zeros na frente para completar os 16 bits
+                            }
+                        }
+                        //System.out.println("DPs"+aux);
+
+                     constante = Integer.toString(conversorDecimalBinario(Integer.parseInt(arrayValores[2])));
+                      //  System.out.println("Antes"+aux);
+                        if(constante.length() < 16){
+                            int sub = 16 - constante.length();
+                            for(int i = 0; i< sub;i++){
+                                constante = zero + "" + constante;//inserindo zeros na frente para completar os 16 bits
+                            }
+                        }
+
+                     rt = Integer.toString(conversorDecimalBinario(retornaReg(arrayValores[1])));
+                        if(rt.length() < 5){
+                            int sub = 5 - rt.length();
+                            for(int i = 0; i< sub;i++){
+                                rt = zero + "" +rt;//inserindo zeros na frente para completar os 16 bits
+                            }
+                        }
+
+                     inst = op +""+rs+""+rt+""+constante;
+                     System.out.println(inst);
+            
+        }
+        
         if(tamanho == 2)
         {
             switch(arrayValores[0]){    
                         case "jr":
-                            System.out.println("Oi jr");
+                        //    System.out.println("Oi jr");
                               op = Integer.toString(conversorDecimalBinario(0));
                                 if(op.length() < 6){
                                   int sub = 6 - op.length();
@@ -2488,7 +3631,7 @@ public class PagInserirDados extends javax.swing.JFrame {
                 new PagInserirDados().setVisible(true);
             }
         });
-    
+        
         
 //        
     }
@@ -2496,13 +3639,10 @@ public class PagInserirDados extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdicionarDados;
     private javax.swing.JButton btnAdicionarInstrucao;
-    private javax.swing.JButton btnAlterarDados;
-    private javax.swing.JButton btnAlterarInstrucao;
     private javax.swing.JButton btnCache;
-    private javax.swing.JButton btnExcluirDados;
-    private javax.swing.JButton btnExcluirInstrucao;
     private javax.swing.JButton btnExecucaoCompleta;
     private javax.swing.JButton btnExecucaoPasso;
+    private javax.swing.JButton btnFalha;
     private javax.swing.JButton btnImprimeCaches;
     private javax.swing.JButton btnImprimirMem;
     private javax.swing.JButton jButton1;
@@ -2520,12 +3660,12 @@ public class PagInserirDados extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

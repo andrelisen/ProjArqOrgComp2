@@ -11,15 +11,6 @@ package myclasses;
  */
 public class cacheInstrucao {
     
-    /*Vamos ter um endereço de 32 bits
-        4 palavras por bloco
-        → 8 bytes por palavra:: bits para offset de byte = log2 8 =4
-        → bits para offset de palavra = log2 4 = 2
-        → bits para indice = log2 numCache
-        → tag = 32 - 8 - 2 - indice
-    
-      int val = (int) (Math.log(64)/Math.log(2));
-    */
     
     public bloco [][]instrucao;
     public int offsetByte;
@@ -28,6 +19,17 @@ public class cacheInstrucao {
     public int tamanhoCache;
     public int numVias;
     
+    
+    
+    /*Vamos ter um endereço de 32 bits
+        4 palavras por bloco
+        → 4 bytes por palavra:: bits para offset de byte = log2 4 = 2
+        → bits para offset de palavra = log2 4 = 2
+        → bits para indice = log2 numCache
+        → tag = 32 - 2 - 2 - indice
+    
+      int val = (int) (Math.log(64)/Math.log(2));
+    */
     
     public cacheInstrucao(int tamanho, int via) {
         
@@ -43,7 +45,7 @@ public class cacheInstrucao {
         
         this.tamanhoCache = tamanho;
         this.numVias=via;
-        this.offsetByte =(int)  (Math.log(8)/Math.log(2));//  int val = (int) (Math.log(64)/Math.log(2));
+        this.offsetByte =(int)  (Math.log(4)/Math.log(2));//  int val = (int) (Math.log(64)/Math.log(2));
       //  System.out.println("Offset de byte="+getOffsetByte());
         this.offsetPalavra =(int)  (Math.log(4)/Math.log(2));//  int val = (int) (Math.log(64)/Math.log(2));
       //  System.out.println("Offset de palavra="+getOffsetPalavra());
@@ -87,7 +89,7 @@ public class cacheInstrucao {
         int auxEnd=0;
         auxEnd = endereco;
         int condicao = 0;
-        
+         
         String tag = verificaTam(conversorDecimalBinario(endereco));
         
         tag = tag.substring(0, tamTag);
@@ -109,10 +111,10 @@ public class cacheInstrucao {
             aux.validade=1;
             aux.tag=Integer.parseInt(tag, 2);
             aux.via=1;
-            
+             
     }
     
-    
+     
     public void especialImpressao(){
        int conjunto = 0;
      //   System.out.println("via=0");
